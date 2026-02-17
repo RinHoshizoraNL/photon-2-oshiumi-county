@@ -1,0 +1,7 @@
+"DecalModulate"
+{
+	"$basetexture" "rin/oshiumi_sheriff/props/mx7000"
+	"$nocull" "1"
+	"$model" "1"
+}
+
