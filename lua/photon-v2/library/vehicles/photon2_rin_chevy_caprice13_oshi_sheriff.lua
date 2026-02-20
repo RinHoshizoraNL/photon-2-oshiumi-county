@@ -146,16 +146,68 @@ VEHICLE.Equipment = {
 				Option = "Grille",
 				Components = {
 					{
-						Component = "photon_sos_mpf4",
+						Component = "photon_sos_mpf4_ocso",
 						Angles = Angle( 0, 98, 0 ),
 						Position = Vector( -12, 99.5, 33.5 ),
 						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
 					},
 					{
-						Component = "photon_sos_mpf4",
+						Component = "photon_sos_mpf4_ocso",
 						Angles = Angle( 0, 82, 0 ),
 						Position = Vector( 12, 99.5, 33.5 ),
 						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+				}
+			},
+		}
+	},
+	{
+		Category = "Side",
+		Options = {
+			{
+				Option = "Side",
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 200, -2, 4 ),
+						Position = Vector( -40.5, 46, 37.8 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( -20, 2, -4 ),
+						Position = Vector( 40.5, 46, 37.8 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
 					},
 				}
 			},
