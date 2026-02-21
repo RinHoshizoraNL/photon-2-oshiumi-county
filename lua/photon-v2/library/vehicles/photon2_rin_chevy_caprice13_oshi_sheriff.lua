@@ -214,6 +214,110 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
+		Category = "Rear",
+		Options = {
+			{
+				Option = "Rear",
+				Props = {
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -9, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 9, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -3, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 3, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				},
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( -9, -85, 54.5 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( 9, -85, 54.5 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( -3, -85, 54.5 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "OFF"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( 3, -85, 54.5 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "OFF"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				}
+			},
+		}
+	},
+	{
 		Category = "ALPR",
 		Options = {
 			{

@@ -151,6 +151,34 @@ VEHICLE.Equipment = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
 						},
 					},
+				},
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 98, 1 ),
+						Position = Vector( -12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 82, -1 ),
+						Position = Vector( 12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
 				}
 			},
 			{
@@ -168,6 +196,34 @@ VEHICLE.Equipment = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit_white",
 						},
 					},
+				},
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 98, 1 ),
+						Position = Vector( -12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 82, -1 ),
+						Position = Vector( 12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
 				}
 			},
 			{
@@ -183,6 +239,34 @@ VEHICLE.Equipment = {
 						Scale = 0.97,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+						},
+					},
+				},
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 98, 1 ),
+						Position = Vector( -12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 82, -1 ),
+						Position = Vector( 12, 115, 34.3 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
 						},
 					},
 				}
@@ -222,8 +306,8 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, 0, 2.5 ),
-						Position = Vector( -37, -53.1, 54.5 ),
+						Angles = Angle( 180, 2, 2.5 ),
+						Position = Vector( -36, -54.5, 54.7 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -236,13 +320,117 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, 0, -2.5 ),
-						Position = Vector( 37, -53.1, 54.5 ),
+						Angles = Angle( 0, -2, -2.5 ),
+						Position = Vector( 36, -54.5, 54.7 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
 								["MODE1"] = {Light = "OFF"},
 								["MODE2"] = {Light = "OFF"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				}
+			},
+		}
+	},
+	{
+		Category = "Rear",
+		Options = {
+			{
+				Option = "Rear",
+				Props = {
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -18, -85, 57),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 18, -85, 57),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -12, -85, 57),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 12, -85, 57),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				},
+				Components = {
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( -18, -85, 57 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( 18, -85, 57 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( -12, -85, 57 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "OFF"},
+								["MODE2"] = {Light = "TRIPLE"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 270, 0 ),
+						Position = Vector( 12, -85, 57 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "OFF"},
+								["MODE2"] = {Light = "TRIPLE"},
 								["MODE3"] = {Light = "TRIPLE"},
 							},
 						},
@@ -360,6 +548,9 @@ VEHICLE.Equipment = {
 				BodyGroups = {
 					{ BodyGroup = "badge", Value = 2 },
 				},
+				SubMaterials = {
+					{ Id = 2, Material = "photon/common/blank" }
+				},
 				Components = {
 					{
 						Component = "photon_pan_toughbookcf30",
@@ -408,13 +599,6 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/supermighty/photon/2015_charger_window_bars.mdl",
-						Position = Vector( 0, -37, 58.5 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
 						Model = "models/schmal/antenna_gps.mdl",
 						Position = Vector( 0, -30, 73.8 ),
 						Angles = Angle( 0, 0, 3 ),
@@ -453,6 +637,14 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1
 					},
+					{
+						Model = "models/schmal/sgm_char15_glass.mdl",
+						Position = Vector( 0, 0, 0 ),
+						Angles = Angle( 0, -90, 0 ),
+						BodyGroups = {
+							["cage"] = 1
+						}
+					}
 				}
 			}
 		}
