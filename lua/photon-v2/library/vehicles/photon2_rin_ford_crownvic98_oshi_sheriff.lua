@@ -55,7 +55,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 6.5, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_chase",
+							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old_dui",
 						},
 					},
 				}
@@ -266,13 +266,13 @@ VEHICLE.Equipment = {
 			{
 				Option = "1998",
 				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 1 },
+					{ BodyGroup = "doortrim", Value = 5 },
 					{ BodyGroup = "grille", Value = 1 },
 					{ BodyGroup = "reartrim", Value = 1 },
 					{ BodyGroup = "handles", Value = 0 },
 					{ BodyGroup = "trunkmodel", Value = 1 },
 					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 2 },
+					{ BodyGroup = "bumperf_chrome", Value = 1 },
 					{ BodyGroup = "bumperr_chrome", Value = 1 },
 					{ BodyGroup = "4bulb_tails", Value = 1 },
 				},
@@ -280,7 +280,7 @@ VEHICLE.Equipment = {
 			{
 				Option = "1999",
 				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 1 },
+					{ BodyGroup = "doortrim", Value = 5 },
 					{ BodyGroup = "grille", Value = 3 },
 					{ BodyGroup = "reartrim", Value = 1 },
 					{ BodyGroup = "handles", Value = 0 },
@@ -294,7 +294,7 @@ VEHICLE.Equipment = {
 			{
 				Option = "2001",
 				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 1 },
+					{ BodyGroup = "doortrim", Value = 5 },
 					{ BodyGroup = "grille", Value = 0 },
 					{ BodyGroup = "reartrim", Value = 0 },
 					{ BodyGroup = "handles", Value = 1 },
@@ -362,12 +362,18 @@ VEHICLE.Equipment = {
 						Scale = 1,
 					},
 					{
+						Model = "models/schmal/antenna_vhf_2.mdl",
+						Position = Vector( 0, -95, 45.3),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 1,
+					},
+					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
 						Position = Vector( 49.2, -9.8, 0 ),
 						Angles = Angle( 0, 12, -90 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff",
+							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
 						},
 						FollowBone = "trunk"
 					},

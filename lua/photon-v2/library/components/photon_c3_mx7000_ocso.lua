@@ -146,7 +146,7 @@ COMPONENT.Templates = {
 	}
 }
 
-COMPONENT.StateMap = "[ROT] 1 2 3 4 5 [~SW] 6 11 12 13 14 15 16 17 18 19 20 33 34 47 48 54 55 56 [~R] 7 9 21 23 35 37 39 41 43 45 8 10 22 24 36 38 40 42 44 46 [~B] 25 26 27 28 [~A] 29 30 31 32 [ProxyC] 53 [ProxyLI] 51 [ProxyRI] 52 [ProxyLO] 49 [ProxyRO] 50"
+COMPONENT.StateMap = "[ROT] 1 2 3 4 5 [~SW] 6 11 12 13 14 15 16 17 18 19 20 33 34 47 48 54 55 56 [~R] 7 9 21 23 35 37 39 41 43 45 8 10 22 24 36 38 40 42 44 46 25 26 27 28 [~A] 29 30 31 32 [ProxyC] 53 [ProxyLI] 51 [ProxyRI] 52 [ProxyLO] 49 [ProxyRO] 50"
 
 local fov = 180
 

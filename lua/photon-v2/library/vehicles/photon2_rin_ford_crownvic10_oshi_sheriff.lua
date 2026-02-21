@@ -111,10 +111,10 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lightbar",
+		Category = "Lighting Setup",
 		Options = {
             {
-				Option = "Code3 MX7000",
+				Option = "2006 - 2008 (Code3 MX7000)",
 				Components = {
 					{
 						Component = "photon_c3_mx7000_ocso",
@@ -122,16 +122,6 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 180, 1 ),
 						Scale = 1,
 					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Grille",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -10, 108, 26 ),
@@ -145,16 +135,6 @@ VEHICLE.Equipment = {
 						Scale = 0.9,
 						Phase = 45,
 					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Rear Deck",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -22, -74.5, 48 ),

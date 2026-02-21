@@ -179,6 +179,11 @@ VEHICLE.Equipment = {
 						Position = Vector( -22, -68, 53.4 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "STROBE"},
+							},
+						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
@@ -188,15 +193,10 @@ VEHICLE.Equipment = {
 						Scale = 1,
 						Phase = 180,
 						SubMaterials = {
-							[2] = "schmal/photon/fedsig_legend/dome_r"
+							[2] = "sentry/shared/glass"
 						},
 						States = {
-							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
+							[1] = "SW",
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
@@ -206,6 +206,11 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "STROBE"},
+							},
+						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
@@ -214,15 +219,10 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[2] = "schmal/photon/fedsig_legend/dome_r"
+							[2] = "sentry/shared/glass"
 						},
 						States = {
-							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
+							[1] = "SW",
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},

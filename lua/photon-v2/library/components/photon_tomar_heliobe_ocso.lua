@@ -53,7 +53,7 @@ COMPONENT.Templates = {
 	}
 }
 
-COMPONENT.StateMap = "[1] 1 3 5 7 2 4 6 8 11 [2] 10 9  [4] 12 13 14 15"
+COMPONENT.StateMap = "[1] 1 3 5 7 2 4 6 8 11 [3] 10 9  [4] 12 13 14 15"
 
 COMPONENT.Elements = {
 	[1] = { "heliobe", Vector(5.95, -9.2, 5), Angle(0, -90, 0) },
@@ -105,18 +105,69 @@ COMPONENT.Segments = {
 			:Steady(2,3):Add(0):Steady(1,3):Add(0)
 		}
 	},
+	["Front_Outer"] = {
+		Frames = {
+			[1] = "3",
+			[2] = "4",
+		},
+		Sequences = {
+			["FLASH"] = sequence():Add( 1, 0, 1, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 0 ):SetTiming( 1/30 )
+		}
+	},
+	["Front_Inboard"] = {
+		Frames = {
+			[1] = "1",
+			[2] = "2",
+		},
+		Sequences = {
+			["FLASH"] = sequence():Add( 0, 0, 1, 0, 1, 0, 1, 0, 0, 2, 0, 2, 0, 2 ):SetTiming( 1/31 )
+		}
+	},
+	["Corners"] = {
+		Frames = {
+			[1] = "5",
+			[2] = "6",
+		},
+		Sequences = {
+			["FLASH"] = sequence():Add( 0, 0, 1, 0, 1, 0, 1, 0, 0, 2, 0, 2, 0, 2 ):SetTiming( 1/31 )
+		}
+	},
+	["Rear"] = {
+		Frames = {
+			[1] = "11",
+			[2] = "9 10",
+			[3] = "7 8",
+		},
+		Sequences = {
+			["FLASH"] = sequence():Add( 1, 0, 1, 0, 1, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0 ):SetTiming( 1/30 )
+		}
+	},
+	["Steady"] = {
+		Frames = {
+			[1] = "3 4 5 6 7 8",
+			[2] = "3 4 5 6",
+		},
+		Sequences = {
+			["Full"] = { 1, },
+			["Front"] = { 2, },
+		}
+	},
 }
 
 COMPONENT.Inputs = {
 	["Emergency.Warning"] = {
 		["MODE1"] = {
-			heliobe = "CODE1",
+			["Steady"] = "Full",
 		},
 		["MODE2"] = {
-			heliobe = "CODE3",
+			["Steady"] = "Front",
+			["Rear"] = "FLASH",
 		},
 		["MODE3"] = {
-			heliobe = "CODE3",
+			["Front_Outer"] = "FLASH",
+			["Front_Inboard"] = "FLASH",
+			["Corners"] = "FLASH",
+			["Rear"] = "FLASH",
 			on = "CODE3"
 		}
 	}
