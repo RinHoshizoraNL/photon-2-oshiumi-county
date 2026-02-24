@@ -19,21 +19,23 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
+						Name = "@pushbar_nypd",
 						Model = "models/gandhi/props/nypd.mdl",
 						Position = Vector( 0, 117, 21.1),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
-						Color = Color(0, 0, 0),
+						Color = Color(0, 0, 0)
 					},
 					{
+						Name = "@front_plate",
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
 						Position = Vector( 0, 118.8, 18.2 ),
 						Angles = Angle( 6.5, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
-						},
-					},
+						}
+					}
 				}
 			},
 			{
@@ -43,21 +45,14 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
+						Inherit = "@pushbar_nypd"
 					},
 					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Inherit = "@front_plate",
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_chase",
-						},
-					},
+						}
+					}
 				}
 			},
 			{
@@ -67,21 +62,14 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
+						Inherit = "@pushbar_nypd"
 					},
 					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Inherit = "@front_plate",
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
-						},
-					},
+						}
+					}
 				}
 			},
 			{
@@ -91,21 +79,15 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(255, 255, 255),
+						Inherit = "@pushbar_nypd",
+						Color = Color(255, 255, 255)
 					},
 					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Inherit = "@front_plate",
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit_white",
-						},
-					},
+						}
+					}
 				}
 			},
 		}
@@ -116,6 +98,86 @@ VEHICLE.Equipment = {
             {
 				Option = "2006 - 2008 (Code3 MX7000)",
 				Components = {
+					-- STANDARD --
+					{
+						Name = "@standard",
+						Component = "photon_standard_cvpi10",
+						Segments = {
+							["Headlight_flashers"] = {
+								Sequences = {
+									STAGE3 = sequence():Alternate(1,2,9)
+								}
+							}
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { Headlight_flashers = "STAGE3" }
+							}
+						}
+					},
+					-- GRILLE LIGHTS --
+					{
+						Name = "@grille_tir6",
+						Component = "ocso_photon_whe_tir6",
+						Position = Vector( 10.1, 107.3, 31.9 ),
+						Angles = Angle( 180, -3, 0 ),
+						Scale = 1
+					},
+					{
+						Inherit = "@grille_tir6",
+						Position = Vector( -10.1, 107.3, 31.9 ),
+						Angles = Angle( 180, 3, 0 ),
+					},
+					{
+						Name = "@siren_speaker",
+						Component = "siren_prototype",
+						Model = "models/sentry/props/whelensa315p_mounta.mdl",
+						Position = Vector( 0, 107.1, 29.3 ),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 1,
+						Siren = "whelen_295hfsa6",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						}
+					}
+                }
+			},
+			{
+				Option = "Code3 MX7000",
+				Props = {
+					{
+						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
+						Position = Vector( 0, 4.2, 25 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 1,
+					}
+				},
+				Components = {
+					-- STANDARD --
+					{
+						Inherit = "@standard",
+						Segments = {
+							["Headlight_flashers"] = {
+								Sequences = {
+									STAGE3 = sequence():Alternate(1,2,9)
+								}
+							}
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { Headlight_flashers = "STAGE3" }
+							}
+						}
+					},
+					-- MX7000 --
 					{
 						Component = "photon_c3_mx7000_ocso",
 						Position = Vector( 0, -19, 66.7 ),
@@ -150,37 +212,16 @@ VEHICLE.Equipment = {
 						Phase = 180,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Siren",
-		Options = {
-			{
-				Option = "Federal Signal Smart Siren",
-				Components = {
+					-- SMART SIREN --
 					{
-						Name = "@siren_speaker",
-						Component = "siren_prototype",
+						Inherit = "@siren_speaker",
 						Model = "models/gandhi/props/es100.mdl",
 						Position = Vector( 0, 107, 29.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "fedsig_smartsiren",
-						Templates = {
-							["Sound"] = { 
-								Tone = {
-									DSP = 0,
-									Pitch = 100
-								}
-							}
-						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
-						}
-					},
-				}
+						Siren = "fedsig_smartsiren"
+					}
+                }
 			}
 		}
 	},
@@ -194,33 +235,31 @@ VEHICLE.Equipment = {
 				Option = "ALPR",
 			    Props = {
 					{
+						Name = "@trunk_alpr",
 						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( 32.5, -100, 49.9),
-						Angles = Angle( -1, 235, -6 ),
-						Scale = 1,
-						SubMaterials = {
-							[0] = "rin/lrpd2/props/alpr"
-						},
-						BodyGroups = {
-							["wire"] = 2,
-							["lens cover"] = 1,
-						},
-					},
-					{
-						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( -32.5, -100, 49.9),
-						Angles = Angle( -1, -55, 6 ),
+						Position = Vector( 24.6, 3.67, 32.5),
+						Angles = Angle( 32, 1.5, -90+7.5 ),
 						Scale = 1,
 						SubMaterials = {
 							[0] = "rin/lrpd2/props/alpr"
 						},
 						BodyGroups = {
 							["wire"] = 0,
-							["lens cover"] = 1,
+							["lens cover"] = 1
 						},
+						FollowBone = "trunk"
 					},
+					{
+						Inherit = "@trunk_alpr",
+						Position = Vector( 24.6, 3.67, -32.5),
+						Angles = Angle( -32, 1.5, -90-7.5 ),
+						BodyGroups = {
+							["wire"] = 2,
+							["lens cover"] = 1
+						}
+					}
 				}
-			},
+			}
 		}
 	},
 	{
@@ -237,13 +276,13 @@ VEHICLE.Equipment = {
 						SubMaterials = {
 							[5] = "sentry/shared/env_cubemap_model"
 						}
-					},
+					}
                 },
 				BodyGroups = {
 					{ BodyGroup = "door_l_notch", Value = 0 },
 					{ BodyGroup = "door_r_notch", Value = 1 },
 				}
-			},
+			}
 		}
 	},
 	{
@@ -252,7 +291,6 @@ VEHICLE.Equipment = {
 			{
 				Option = "Police Equipment",
 				BodyGroups = {
-					{ BodyGroup = "hubcaps", Value = 1 },
 					{ BodyGroup = "pushbar", Value = 0 },
 					{ BodyGroup = "rearfascia", Value = 0 },
 					{ BodyGroup = "spotlight_l", Value = 1 },
@@ -290,16 +328,12 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 0, 10.7, 25 ),
-						Angles = Angle( 0, 0, 20 ),
-						Scale = 1,
-					},
-					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 4.2, 25 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
+						Name = "@motorola_6500",
+						Model = "models/paolo/props/motorola_6500.mdl",
+						Position = Vector( 0, 14, 25 ),
+						Angles = Angle( 21.25, -90, 0 ),
+						Scale = 0.7,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Model = "models/schmal/antenna_lojack.mdl",
@@ -337,9 +371,9 @@ VEHICLE.Equipment = {
 							[1] = "rin/oshiumi_sheriff/props/plate_sheriff",
 						},
 						FollowBone = "trunk"
-					},
+					}
 				}
 			}
 		}
-	},
+	}
 }
