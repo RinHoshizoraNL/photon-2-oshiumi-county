@@ -1,35 +1,35 @@
-if (Photon2.ReloadVehicleFile()) then return end --rin
+if (Photon2.ReloadVehicleFile()) then return end
 local VEHICLE = Photon2.LibraryVehicle()
 
-VEHICLE.Title 		= "1998 Ford Crown Victoria OCSO"
-VEHICLE.Vehicle		= "cvpi_hd_98_sgm"
+VEHICLE.Title 		= "1996 Ford Crown Victoria OCSO"
+VEHICLE.Vehicle		= "96cvpi_sgm"
 VEHICLE.Category 	= "Photon 2: Oshiumi County Sheriff"
 VEHICLE.Author		= "Rin Hoshizora"
 
 local sequence = Photon2.SequenceBuilder.New
 
 VEHICLE.Equipment = {
-	{
+    	{
 		Category = "Livery",
 		Options = {
 			{
 				Option = "Patrol",
 				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic98/patrol" }
+					{ Id = 6, Material = "rin/oshiumi_sheriff/crownvic96/patrol" }
 				},
 				Props = {
 					{
 						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
+						Position = Vector( 0, 120, 23.3),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Color = Color(0, 0, 0),
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Position = Vector( 0, 122.7, 19 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.99,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
 						},
@@ -39,21 +39,21 @@ VEHICLE.Equipment = {
 			{
 				Option = "Highway Patrol",
 				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic98/highway" }
+					{ Id = 6, Material = "rin/oshiumi_sheriff/crownvic96/highway" }
 				},
 				Props = {
 					{
 						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
+						Position = Vector( 0, 120, 23.3),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Color = Color(0, 0, 0),
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Position = Vector( 0, 122.7, 19 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.99,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old_dui",
 						},
@@ -63,21 +63,21 @@ VEHICLE.Equipment = {
 			{
 				Option = "Supervisor",
 				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic98/supervisor" }
+					{ Id = 6, Material = "rin/oshiumi_sheriff/crownvic96/supervisor" }
 				},
 				Props = {
 					{
 						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
+						Position = Vector( 0, 120, 23.3),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Color = Color(0, 0, 0),
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Position = Vector( 0, 122.7, 19 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.99,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit",
 						},
@@ -87,21 +87,21 @@ VEHICLE.Equipment = {
 			{
 				Option = "Command",
 				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic98/command" }
+					{ Id = 6, Material = "rin/oshiumi_sheriff/crownvic96/command" }
 				},
 				Props = {
 					{
 						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
+						Position = Vector( 0, 120, 23.3),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
-						Color = Color(255, 255, 255),
+						Color = Color(225, 225, 225),
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Position = Vector( 0, 122.7, 19 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.99,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_credit_white",
 						},
@@ -118,44 +118,12 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "photon_tomar_heliobe_ocso",
-						Position = Vector( 0, -19, 66.4 ),
+						Position = Vector( 0, -19, 67 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 0.995,
+						Scale = 1.05,
 						SubMaterials = {
 							[2] = "rin/oshiumi_sheriff/props/heliobe"
 						}
-					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Grille",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -8.5, 108, 26 ),
-						Angles = Angle( 0, 95, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 8.5, 108, 26 ),
-						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
 					},
                 }
 			},
@@ -169,7 +137,7 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -22, -74.5, 48 ),
+						Position = Vector( -22.4, -74.5, 47.5 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Inputs = {
@@ -181,7 +149,7 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 22, -74.5, 48 ),
+						Position = Vector( 22.4, -74.5, 47.5 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Phase = 180,
@@ -191,6 +159,38 @@ VEHICLE.Equipment = {
 							},
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+                }
+			},
+		}
+	},
+	{
+		Category = "Grille",
+		Options = {
+            {
+				Option = "Federal Signal GH1",
+				Components = {
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( -7.5, 122.5, 24.25 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.9,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = {Light = "HALOGEN"},
+							},
+						},
+					},
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( 7.5, 122.5, 24.25 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.9,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = {Light = "HALOGEN"},
+							},
+						},
 					},
                 }
 			},
@@ -209,7 +209,7 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 107, 29.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "fedsig_smartsiren",
+						Siren = "pa300_1",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -232,100 +232,65 @@ VEHICLE.Equipment = {
 			{
 				Option = "Steelies",
 				BodyGroups = {
-					{ BodyGroup = "hubcaps", Value = 1 },
-				},
+					{ BodyGroup = "hubcaps_fl", Value = 1 },
+					{ BodyGroup = "hubcaps_fr", Value = 0 },
+					{ BodyGroup = "hubcaps_rl", Value = 0 },
+					{ BodyGroup = "hubcaps_rr", Value = 0 },
+				}
 			},
 			{
-				Option = "Steelies missing center caps",
+				Option = "Steelies missing centercaps",
 				BodyGroups = {
-					{ BodyGroup = "hubcaps", Value = 2 },
-				},
-			}
-		}
-	},
-    {
-		Category = "Rain Guards",
-		Options = {
-			{
-				Option = "Rain Guards",
-				BodyGroups = {
-					{ BodyGroup = "rainguards", Value = 1 },
-				},
+					{ BodyGroup = "hubcaps_fl", Value = 2 },
+					{ BodyGroup = "hubcaps_fr", Value = 2 },
+					{ BodyGroup = "hubcaps_rl", Value = 2 },
+					{ BodyGroup = "hubcaps_rr", Value = 2 },
+				}
 			},
 			{
-				Option = "None",
+				Option = "Steelies missing one centercap",
 				BodyGroups = {
-					{ BodyGroup = "rainguards", Value = 0 },
-				},
-			},
-		}
-	},
-	{
-		Category = "Model Year",
-		Options = {
-			{
-				Option = "1998",
-				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 1 },
-					{ BodyGroup = "reartrim", Value = 1 },
-					{ BodyGroup = "handles", Value = 0 },
-					{ BodyGroup = "trunkmodel", Value = 1 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 1 },
-					{ BodyGroup = "bumperr_chrome", Value = 1 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
+					{ BodyGroup = "hubcaps_fl", Value = 1 },
+					{ BodyGroup = "hubcaps_fr", Value = 2 },
+					{ BodyGroup = "hubcaps_rl", Value = 0 },
+					{ BodyGroup = "hubcaps_rr", Value = 0 },
+				}
 			},
 			{
-				Option = "1999",
+				Option = "Hubcaps",
 				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 3 },
-					{ BodyGroup = "reartrim", Value = 1 },
-					{ BodyGroup = "handles", Value = 0 },
-					{ BodyGroup = "trunkmodel", Value = 1 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 0 },
-					{ BodyGroup = "bumperr_chrome", Value = 0 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
+					{ BodyGroup = "hubcaps_fl", Value = 0 },
+					{ BodyGroup = "hubcaps_fr", Value = 1 },
+					{ BodyGroup = "hubcaps_rl", Value = 1 },
+					{ BodyGroup = "hubcaps_rr", Value = 1 },
+				}
 			},
 			{
-				Option = "2001",
+				Option = "Hubcaps one missing",
 				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 0 },
-					{ BodyGroup = "reartrim", Value = 0 },
-					{ BodyGroup = "handles", Value = 1 },
-					{ BodyGroup = "trunkmodel", Value = 0 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 0 },
-					{ BodyGroup = "bumperr_chrome", Value = 0 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
+					{ BodyGroup = "hubcaps_fl", Value = 0 },
+					{ BodyGroup = "hubcaps_fr", Value = 1 },
+					{ BodyGroup = "hubcaps_rl", Value = 2 },
+					{ BodyGroup = "hubcaps_rr", Value = 1 },
+				}
 			},
-		}
+        }
 	},
 	{
 		Category = "Spotlight",
 		Options = {
 			{
-				Option = "Pillar Spotlight",
+				Option = "Spotlight",
 				Components = {
 					{
 						Component = "photon_par46_left",
-						Position = Vector( -35.06, 26.46, 49.282 ),
+						Position = Vector( -36, 28, 50 ),
 						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[5] = "sentry/shared/env_cubemap_model"
 						}
 					},
-				},
-				BodyGroups = {
-					{ BodyGroup = "door_l_notch", Value = 0 },
-					{ BodyGroup = "door_r_notch", Value = 1 },
 				}
 			},
 		}
@@ -336,55 +301,76 @@ VEHICLE.Equipment = {
 			{
 				Option = "Police Equipment",
 				BodyGroups = {
-					{ BodyGroup = "rearfascia", Value = 1 },
-					{ BodyGroup = "spotlight_l", Value = 1 },
-					{ BodyGroup = "spotlight_r", Value = 1 },
-					{ BodyGroup = "windowbars", Value = 1 },
+					{ BodyGroup = "pillars", Value = 0 },
+                    { BodyGroup = "cvbadge", Value = 0 },
+                    { BodyGroup = "fordbadge", Value = 0 },
+					{ BodyGroup = "trim_body", Value = 1 },
+					{ BodyGroup = "trim_fdoor", Value = 1 },
+					{ BodyGroup = "trim_rdoor", Value = 1 },
 				},
 				Props = {
 					{
 						Model = "models/supermighty/photon/dashcam.mdl",
-						Position = Vector( 7.5, 13.8, 58.55),
+						Position = Vector( 7.5, 15, 59.5),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
+						Model = "models/sentry/props/setina_partition_cvpi.mdl",
+						Position = Vector( 0, 0, 0),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/procopper_cvpi.mdl",
+						Position = Vector( 0, 1.5, 0),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
 						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 0, 10.7, 25 ),
+						Position = Vector( 0, 12.2, 25 ),
 						Angles = Angle( 0, 0, 20 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 4.2, 25 ),
+						Position = Vector( 0, 5.6, 25 ),
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/rob/oldpolicepack/motorola.mdl",
-						Position = Vector( 0, 20, 31.2 ),
+						Position = Vector( 0, 21, 31.2 ),
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/schmal/antenna_vhf_2.mdl",
-						Position = Vector( 0, -95, 45.3),
-						Angles = Angle( 0, 0, 0 ),
+						Position = Vector( 0, -100, 43.5),
+						Angles = Angle( 0, 0, 5 ),
 						Scale = 1,
 					},
 					{
+						Model = "models/supermighty/photon/front_holder.mdl",
+						Position = Vector( 0, 122, 19 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 1
+					},
+					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 49.2, -9.8, 0 ),
-						Angles = Angle( 0, 12, -90 ),
-						Scale = 1,
+						Position = Vector( 0, -125.4, 31.8 ),
+						Angles = Angle( 0, 270, 00 ),
+						Scale = 0.95,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
 						},
-						FollowBone = "trunk"
 					},
 				}
 			}
