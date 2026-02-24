@@ -93,10 +93,77 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lighting Setup",
+		Category = "Wheels",
+		Options = {
+			{
+				Option = "Steelies",
+				BodyGroups = {
+					{ BodyGroup = "hubcaps", Value = 1 },
+				}
+			},
+			{
+				Option = "Hubcaps",
+				BodyGroups = {
+					{ BodyGroup = "hubcaps", Value = 0 },
+				}
+			}
+		}
+	},
+	{
+		Category = "Lighting and Siren Setup",
 		Options = {
             {
-				Option = "2006 - 2008 (Code3 MX7000)",
+				Option = "2009 - 2011 (Whelen Liberty)", 
+				Props = {
+					{
+						Model = "models/supermighty/photon/whelen_liberty_ocso.mdl",
+						Position = Vector( 0, -20, 68.64-2.841 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.91,
+						BodyGroups = {
+							["feet"] = 1
+						},
+						SubMaterials = { 
+							[4] = "rin/oshiumi_sheriff/props/liberty/glass"
+						}
+					},
+					{
+						Name = "@liberty_feet",
+						Model = "models/schmal/whelen_liberty_48.mdl",
+						Position = Vector( 0, -20, 68.64 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.91,
+						Bones = {
+							-- INVISIBLE, DISAPPEAR, FUCK OFF!!!! --
+							["liberty"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["lens"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fi_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fo_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["ri_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["rm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["ro_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+
+							["foot_l"] = { Vector( -3.25, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["foot_r"] = { Vector( 3.25, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["strap_l"] = { Vector( -5.5, 0, 0.9), Angle( 0, 0, 0 ), 1 },
+							["strap_r"] = { Vector( 5.5, 0, 0.9), Angle( 0, 0, 0 ), 1 }
+						}
+					},
+					{
+						Model = "models/tdmcars/emergency/equipment/whelen_295slsa6.mdl",
+						Position = Vector( 0, 4.5, 24 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 1
+					},
+					{
+						Model = "models/tdmcars/emergency/equipment/whelen_slimlighter.mdl",
+						Position = Vector( 1.14, -77, 49.4 ),
+						Angles = Angle( 0, -90, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE
+					}
+				},
 				Components = {
 					-- STANDARD --
 					{
@@ -151,7 +218,7 @@ VEHICLE.Equipment = {
                 }
 			},
 			{
-				Option = "Code3 MX7000",
+				Option = "2006 - 2008 (Code3 MX7000)",
 				Props = {
 					{
 						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
