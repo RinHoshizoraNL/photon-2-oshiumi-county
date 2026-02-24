@@ -577,12 +577,14 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 8.6, 29 ),
 						Angles = Angle( 0, 0, 20 ),
 						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
 						Position = Vector( 0, 2.2, 29 ),
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/sentry/props/procopper_cvpi.mdl",

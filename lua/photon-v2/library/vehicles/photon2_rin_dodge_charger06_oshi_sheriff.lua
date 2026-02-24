@@ -311,12 +311,14 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 14.7, 25 ),
 						Angles = Angle( 0, 0, 20 ),
 						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
 						Position = Vector( 0, 8, 25 ),
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/schmal/antenna_pod_navigator.mdl",
