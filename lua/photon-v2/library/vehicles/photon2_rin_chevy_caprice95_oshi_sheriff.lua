@@ -317,8 +317,8 @@ VEHICLE.Equipment = {
 						Scale = 1,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
-						},
-					},
+						}
+					}
 				}
 			}
 		}
@@ -364,11 +364,11 @@ VEHICLE.Equipment = {
 								Angles = Angle( 0, 0, 0 ),
 								Scale = 1,
 								Follow = { Attachment = "wheel_rr" }
-							},
-						},
+							}
+						}
 					}	
-				},
-			},
+				}
+			}
 		}
-	},
+	}
 }

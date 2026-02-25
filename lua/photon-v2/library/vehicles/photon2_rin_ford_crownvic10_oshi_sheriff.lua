@@ -155,13 +155,6 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 4.5, 24 ),
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1
-					},
-					{
-						Model = "models/tdmcars/emergency/equipment/whelen_slimlighter.mdl",
-						Position = Vector( 1.14, -77, 49.4 ),
-						Angles = Angle( 0, -90, 0 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE
 					}
 				},
 				Components = {
@@ -195,6 +188,24 @@ VEHICLE.Equipment = {
 						Position = Vector( -10.1, 107.3, 31.9 ),
 						Angles = Angle( 180, 3, 0 ),
 					},
+					-- REAR SLIMLIGHTER --
+					{
+						Component = "lr_photon_whe_sl",
+						Position = Vector( 0, -78.1, 52.4 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 1,
+						Bones = {
+							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -55 ), 1 }
+						},
+						BodyGroups = {
+							["lighthead"] = 1,
+							["wire"] = 0,
+							["mount"] = 0
+						},
+						States = { "R", "R" },
+						RenderGroup = RENDERGROUP_OPAQUE
+					},
+					-- SIREN WEE WOO WEE WOO --
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
