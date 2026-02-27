@@ -115,109 +115,10 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lightbar",
-		Options = {
-			{ Option = "SoundOff Signal nForce", 
-				Variants = {
-					{
-						Variant = "Default",
-						Components = {
-							{
-								Name = "@nforce48",
-								Component = "photon_sos_nforce_48_ocso",
-								Position = Vector( 0, -19, 70.6 ),
-								Angles = Angle( 0, 0, -2 ),
-								Scale = 0.9,
-								Bones = {
-									["foot_l"] = { Vector( -1, 0, 0 ), Angle(), 1 },
-									["foot_r"] = { Vector( 1, 0, 0 ), Angle(), 1 }
-								}
-							},
-						}
-					},
-				},
-			},
-		},
-	},
-    {
-		Category = "Grille",
+		Category = "Lighting Setup",
 		Options = {
 			{
-				Option = "Grille",
-				Components = {
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 0 ),
-						Position = Vector( -12, 99.5, 33.5 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, 0 ),
-						Position = Vector( 12, 99.5, 33.5 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-				}
-			},
-		}
-	},
-	{
-		Category = "Side",
-		Options = {
-			{
-				Option = "Side",
-				Components = {
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 200, -2, 4 ),
-						Position = Vector( -40.5, 46, 37.8 ),
-						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( -20, 2, -4 ),
-						Position = Vector( 40.5, 46, 37.8 ),
-						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-				}
-			},
-		}
-	},
-	{
-		Category = "Rear",
-		Options = {
-			{
-				Option = "Rear",
+				Option = "2015-2017 (SoundOff Signal nForce)",
 				Props = {
 					{
 						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
@@ -250,7 +151,71 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
+						Component = "photon_sos_nforce_48_ocso", --LIGHTBAR
+						Position = Vector( 0, -19, 70.6 ),
+						Angles = Angle( 0, 0, -2 ),
+						Scale = 0.9,
+						Bones = {
+								["foot_l"] = { Vector( -1, 0, 0 ), Angle(), 1 },
+								["foot_r"] = { Vector( 1, 0, 0 ), Angle(), 1 }
+						}
+				    },
+					{
+						Component = "photon_sos_mpf4_ocso", --GRILLE
+						Angles = Angle( 0, 98, 0 ),
+						Position = Vector( -12, 99.5, 33.5 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
 						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( 0, 82, 0 ),
+						Position = Vector( 12, 99.5, 33.5 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso", --SIDE
+						Angles = Angle( 200, -2, 4 ),
+						Position = Vector( -40.5, 46, 37.8 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso",
+						Angles = Angle( -20, 2, -4 ),
+						Position = Vector( 40.5, 46, 37.8 ),
+						Scale = 1,
+						Phase = 180,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {Light = "MODE1"},
+								["MODE2"] = {Light = "MODE1"},
+								["MODE3"] = {Light = "TRIPLE"},
+							},
+						},
+					},
+					{
+						Component = "photon_sos_mpf4_ocso", --REAR
 						Angles = Angle( 0, 270, 0 ),
 						Position = Vector( -9, -85, 54.5 ),
 						Scale = 1,

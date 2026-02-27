@@ -47,7 +47,9 @@ COMPONENT.Segments = {
 			[1] = "1"
 		},
 		Sequences = {
-			DEBUG = { 1 }
+			DEBUG = { 1 },
+			["TRIPLE"] = sequence():TripleFlash(0, 1):Stretch(1),
+			["OFF"] = { 0 },
 		}
 	}
 }
@@ -56,7 +58,7 @@ COMPONENT.Inputs = {
 	["Emergency.Warning"] = {
 		["MODE1"] = { All = "DEBUG" },
 		["MODE2"] = { All = "DEBUG" },
-		["MODE3"] = { All = "DEBUG" }
+		["MODE3"] = { All = "TRIPLE" }
 	}
 }
 

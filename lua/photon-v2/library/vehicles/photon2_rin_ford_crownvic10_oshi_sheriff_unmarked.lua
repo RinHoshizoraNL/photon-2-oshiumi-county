@@ -1,7 +1,7 @@
 if (Photon2.ReloadVehicleFile()) then return end --rin
 local VEHICLE = Photon2.LibraryVehicle()
 
-VEHICLE.Title 		= "2010 Ford Crown Victoria OCSO Slicktop"
+VEHICLE.Title 		= "2010 Ford Crown Victoria OCSO Unmarked"
 VEHICLE.Vehicle		= "cvpi_hd_sgm"
 VEHICLE.Category 	= "Photon 2: Oshiumi County Sheriff"
 VEHICLE.Author		= "Rin Hoshizora"
@@ -10,13 +10,92 @@ local sequence = Photon2.SequenceBuilder.New
 
 VEHICLE.Equipment = {
 	{
-		Category = "Livery",
+		Category = "Paint",
+		Options = {
+            {
+				Option = "Norsea Blue Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(30,56,82)
+				}
+			},
+			{
+				Option = "Deep Wedgewood Blue Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(1,12,32)
+				}
+			},
+			{
+				Option = "Light Ice Blue Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(127, 150, 156)
+				}
+			},
+			{
+				Option = "Aspen Green Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(12, 32, 26)
+				}
+			},
+			{
+				Option = "Dark Toreador Red Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(58, 0, 0)
+				}
+			},
+            {
+				Option = "Dark Cherry Red Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(27, 0, 0)
+				}
+			},
+			{
+				Option = "Medium Titanium Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(30, 30, 30)
+				}
+			},
+			{
+				Option = "Silver Birch Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(153, 153, 153)
+				}
+			},
+			{
+				Option = "Smokestone Metallic",
+				Properties = {
+					Skin = 0,
+					Color = Color(156, 153, 145)
+				}
+			},
+			{
+				Option = "Black",
+				Properties = {
+					Skin = 0,
+					Color = Color(0, 0, 0)
+				}
+			},
+			{
+				Option = "Performance White",
+				Properties = {
+					Skin = 0,
+					Color = Color(255, 255, 255)
+				}
+			},
+        }
+	},
+	{
+		Category = "Pushbar",
 		Options = {
 			{
-				Option = "Patrol",
-				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic10/patrol_slick" }
-				},
+				Option = "KGT-1",
 				Props = {
 					{
 						Model = "models/gandhi/props/nypd.mdl",
@@ -28,49 +107,7 @@ VEHICLE.Equipment = {
 				}
 			},
 			{
-				Option = "Highway Patrol",
-				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic10/highway_slick" }
-				},
-				Props = {
-					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
-					},
-				}
-			},
-			{
-				Option = "Supervisor",
-				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic10/supervisor_slick" }
-				},
-				Props = {
-					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
-					},
-				}
-			},
-			{
-				Option = "Command",
-				SubMaterials = {
-					{ Id = 3, Material = "rin/oshiumi_sheriff/crownvic10/command_slick" }
-				},
-				Props = {
-					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(255, 255, 255),
-					},
-				}
+				Option = "None",
 			},
 		}
 	},
@@ -191,35 +228,11 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "lr_photon_whe_sl_ocso",
-						Position = Vector( 0, -64.9, 61 ),
+						Position = Vector( 0, -78.1, 52.4 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Phase = 180,
 						Bones = {
-							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -45 ), 1 }
-						},
-						BodyGroups = {
-							["lighthead"] = 0,
-							["wire"] = 0,
-							["mount"] = 0
-						},
-						States = { "R", "R" },
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {All = "OFF"},
-								["MODE2"] = {All = "ALTERNATE"},
-								["MODE3"] = {All = "RESPONSE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE
-					},
-					{
-						Component = "lr_photon_whe_sl_ocso",
-						Position = Vector( -16, -77.3, 51 ),
-						Angles = Angle( 0, 82, 0 ),
-						Scale = 1,
-						Bones = {
-							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -57 ), 1 }
+							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -55 ), 1 }
 						},
 						BodyGroups = {
 							["lighthead"] = 0,
@@ -229,37 +242,14 @@ VEHICLE.Equipment = {
 						States = { "R", "B" },
 						Inputs = {
 							["Emergency.Warning"] = {
-								["MODE1"] = {All = "CRUISEA"},
+								["MODE1"] = {All = "CRUISE"},
 								["MODE2"] = {All = "ALTERNATE"},
 								["MODE3"] = {All = "RESPONSE"},
 							},
 						},
 						RenderGroup = RENDERGROUP_OPAQUE
 					},
-					{
-						Component = "lr_photon_whe_sl_ocso",
-						Position = Vector( 16, -77.3, 51 ),
-						Angles = Angle( 0, 98, 0 ),
-						Scale = 1,
-						Bones = {
-							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -57 ), 1 }
-						},
-						BodyGroups = {
-							["lighthead"] = 0,
-							["wire"] = 0,
-							["mount"] = 0
-						},
-						States = { "B", "R" },
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {All = "CRUISEB"},
-								["MODE2"] = {All = "ALTERNATE"},
-								["MODE3"] = {All = "RESPONSE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE
-					},
-                }
+				}
 			},
 		}
 	},
@@ -324,45 +314,6 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "ALPR",
-		Options = {
-			{
-				Option = "None",
-			},
-			{
-				Option = "ALPR",
-			    Props = {
-					{
-						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( 32.5, -100, 49.9),
-						Angles = Angle( -1, 235, -6 ),
-						Scale = 1,
-						SubMaterials = {
-							[0] = "rin/lrpd2/props/alpr"
-						},
-						BodyGroups = {
-							["wire"] = 2,
-							["lens cover"] = 1,
-						},
-					},
-					{
-						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( -32.5, -100, 49.9),
-						Angles = Angle( -1, -55, 6 ),
-						Scale = 1,
-						SubMaterials = {
-							[0] = "rin/lrpd2/props/alpr"
-						},
-						BodyGroups = {
-							["wire"] = 0,
-							["lens cover"] = 1,
-						},
-					},
-				}
-			},
-		}
-	},
-	{
 		Category = "Spotlight",
 		Options = {
 			{
@@ -391,19 +342,20 @@ VEHICLE.Equipment = {
 			{
 				Option = "Police Equipment",
 				BodyGroups = {
-					{ BodyGroup = "hubcaps", Value = 1 },
+					{ BodyGroup = "hubcaps", Value = 0 },
 					{ BodyGroup = "pushbar", Value = 0 },
 					{ BodyGroup = "rearfascia", Value = 0 },
 					{ BodyGroup = "spotlight_l", Value = 1 },
 					{ BodyGroup = "spotlight_r", Value = 1 },
-					{ BodyGroup = "windowbars", Value = 1 },
+					{ BodyGroup = "windowbars", Value = 0 },
 					{ BodyGroup = "grille", Value = 0 },
-					{ BodyGroup = "doortrim", Value = 5 },
+					{ BodyGroup = "doortrim", Value = 2 },
 					{ BodyGroup = "reartrim", Value = 0 },
 					{ BodyGroup = "handles", Value = 0 },
 					{ BodyGroup = "trunkmodel", Value = 0 },
 					{ BodyGroup = "trunkemblem", Value = 0 },
 					{ BodyGroup = "mirrors", Value = 0 },
+					{ BodyGroup = "partition", Value = 1 },
 					{ BodyGroup = "bumperf_chrome", Value = 0 },
 					{ BodyGroup = "bumperr_chrome", Value = 0 },
 				},
@@ -439,18 +391,6 @@ VEHICLE.Equipment = {
 						Model = "models/schmal/antenna_lojack.mdl",
 						Position = Vector( 0, -115, 47.2 ),
 						Angles = Angle( 0, 0, 5 ),
-						Scale = 1,
-					},
-					{
-						Model = "models/schmal/antenna_lojack.mdl",
-						Position = Vector( -5, -45, 67.3 ),
-						Angles = Angle( -2, 0, 4 ),
-						Scale = 1,
-					},
-					{
-						Model = "models/schmal/antenna_lojack.mdl",
-						Position = Vector( 5, -45, 67.3 ),
-						Angles = Angle( 2, 0, 4 ),
 						Scale = 1,
 					},
 					{

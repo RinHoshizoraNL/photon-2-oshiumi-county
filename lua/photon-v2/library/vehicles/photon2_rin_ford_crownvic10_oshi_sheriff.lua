@@ -190,7 +190,7 @@ VEHICLE.Equipment = {
 					},
 					-- REAR SLIMLIGHTER --
 					{
-						Component = "lr_photon_whe_sl",
+						Component = "lr_photon_whe_sl_ocso",
 						Position = Vector( 0, -78.1, 52.4 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
@@ -198,35 +198,21 @@ VEHICLE.Equipment = {
 							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -55 ), 1 }
 						},
 						BodyGroups = {
-							["lighthead"] = 1,
+							["lighthead"] = 0,
 							["wire"] = 0,
 							["mount"] = 0
 						},
 						States = { "R", "R" },
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {All = "OFF"},
+								["MODE2"] = {All = "ALTERNATE"},
+								["MODE3"] = {All = "RESPONSE"},
+							},
+						},
 						RenderGroup = RENDERGROUP_OPAQUE
 					},
-					-- SIREN WEE WOO WEE WOO --
-					{
-						Name = "@siren_speaker",
-						Component = "siren_prototype",
-						Model = "models/sentry/props/whelensa315p_mounta.mdl",
-						Position = Vector( 0, 107.1, 29.3 ),
-						Angles = Angle( 0, 0, 0 ),
-						Scale = 1,
-						Siren = "whelen_295hfsa6",
-						Templates = {
-							["Sound"] = { 
-								Tone = {
-									DSP = 0,
-									Pitch = 100
-								}
-							}
-						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
-						}
-					}
-                }
+				}
 			},
 			{
 				Option = "2006 - 2008 (Code3 MX7000)",
@@ -290,16 +276,37 @@ VEHICLE.Equipment = {
 						Phase = 180,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
-					-- SMART SIREN --
+				}
+			}
+		}
+	},
+	{
+		Category = "Siren",
+		Options = {
+			{
+				Option = "Federal Signal Smart Siren",
+				Components = {
 					{
-						Inherit = "@siren_speaker",
+						Name = "@siren_speaker",
+						Component = "siren_prototype",
 						Model = "models/gandhi/props/es100.mdl",
 						Position = Vector( 0, 107, 29.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "fedsig_smartsiren"
-					}
-                }
+						Siren = "fedsig_smartsiren",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						}
+					},
+				}
 			}
 		}
 	},
