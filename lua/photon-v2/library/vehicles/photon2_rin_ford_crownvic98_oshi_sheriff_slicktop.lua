@@ -139,6 +139,14 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
 						Color = Color(0, 0, 0),
+						SubMaterials = {
+							[1] = "sentry/props/fasttrax/1",
+							[2] = "sentry/props/fasttrax/2",
+							[3] = "sentry/props/fasttrax/1",
+							[5] = "sentry/props/fasttrax/2",
+							[6] = "sentry/props/fasttrax/1",
+							[7] = "sentry/props/fasttrax/1",
+						},
 					},
 				}
 			},
