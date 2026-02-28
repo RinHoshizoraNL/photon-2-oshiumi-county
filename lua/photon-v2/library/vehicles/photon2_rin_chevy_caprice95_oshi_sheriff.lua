@@ -114,18 +114,18 @@ VEHICLE.Equipment = {
 		Category = "Lightbar",
 		Options = {
             {
-				Option = "Tomar Heliobe",
-				Components = {
+				Option = "Federal Signal Vision", --I'LL GET THIS WORKING LATER
+				Props = {
 					{
-						Component = "photon_tomar_heliobe_ocso",
-						Position = Vector( 0, -20.3, 59.5 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1.07,
+						Model = "models/sentry/props/vision.mdl",
+						Position = Vector( 0, -18.5, 58.5 ),
+						Angles = Angle( 0, 180, 0 ),
+						Scale = 1.075,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/heliobe"
-						}
+							[2] = "rin/oshiumi_sheriff/props/vision",
+						},
 					},
-                }
+				}
 			},
 		}
 	},
@@ -137,7 +137,7 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -9, 105, 20.3 ),
+						Position = Vector( -9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						Inputs = {
@@ -148,7 +148,7 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 9, 105, 20.3 ),
+						Position = Vector( 9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						Inputs = {
@@ -285,17 +285,17 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 26.4, 28 ),
+						Model = "models/gandhi/props/vision.mdl",
+						Position = Vector( 0, 26.3, 28 ),
 						Angles = Angle( 90, 270, 0 ),
-						Scale = 1.1,
+						Scale = 0.93,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/rob/oldpolicepack/motorola.mdl",
-						Position = Vector( 0, 27.5, 25.5 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 26.5, 24 ),
+						Angles = Angle( 270, 270, 0 ),
+						Scale = 0.39,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

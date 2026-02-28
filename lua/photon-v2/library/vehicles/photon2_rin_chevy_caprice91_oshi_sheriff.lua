@@ -77,18 +77,21 @@ VEHICLE.Equipment = {
 		Category = "Lightbar",
 		Options = {
             {
-				Option = "Tomar Heliobe",
-				Components = {
+				Option = "Whelen Advantedge", --I'LL GET THIS WORKING SOME TIME IDK
+				Props = {
 					{
-						Component = "photon_tomar_heliobe_ocso",
-						Position = Vector( 0, -20.3, 59.5 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1.07,
+						Model = "models/sentry/props/whelenadvantedge.mdl",
+						Position = Vector( 0, -20.5, 60.2 ),
+						Angles = Angle( 0, -90, 0 ),
+						Scale = 1.012,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/heliobe"
-						}
+							[2] = "rin/oshiumi_sheriff/props/advantedge"
+						},
+						BodyGroups = {
+							["Speaker"] = 1,
+						},
 					},
-                }
+				}
 			},
 		}
 	},
@@ -100,7 +103,7 @@ VEHICLE.Equipment = {
 				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -9, 105, 20.3 ),
+						Position = Vector( -9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						Inputs = {
@@ -111,7 +114,7 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 9, 105, 20.3 ),
+						Position = Vector( 9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						Inputs = {
@@ -128,7 +131,7 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Federal Signal Smart Siren",
+				Option = "Federal Signal PA300",
 				Components = {
 					{
 						Name = "@siren_speaker",
@@ -190,17 +193,17 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/rob/oldpolicepack/motorolaradio1.mdl",
-						Position = Vector( 10.7, 27, 22),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 0.5,
+						Model = "models/gandhi/props/sirenbox.mdl",
+						Position = Vector( 1, 29.8, 35.75 ),
+						Angles = Angle( 90, 270, 0 ),
+						Scale = 1.35,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/rob/oldpolicepack/sirenbox.mdl",
-						Position = Vector( 8.6, 29.5, 35),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 0.9,
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 26.5, 24 ),
+						Angles = Angle( 270, 270, 0 ),
+						Scale = 0.39,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

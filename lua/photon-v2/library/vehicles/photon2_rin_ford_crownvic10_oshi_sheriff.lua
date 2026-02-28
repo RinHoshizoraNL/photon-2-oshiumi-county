@@ -110,10 +110,78 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lighting and Siren Setup",
+		Category = "Lighting Setup",
 		Options = {
             {
-				Option = "2009 - 2011 (Whelen Liberty)", 
+				Option = "2006 - 2009 (Federal Signal Vision)",
+				Props = {
+					{
+						Model = "models/gandhi/props/vision.mdl",
+						Position = Vector( 0, 4.1, 25 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 0.8,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/vision.mdl",
+						Position = Vector( 0, -17.8, 66 ),
+						Angles = Angle( 0, 180, 0.5 ),
+						Scale = 0.99,
+						SubMaterials = {
+							[2] = "rin/oshiumi_sheriff/props/vision_new",
+						},
+					},
+				},
+				Components = {
+					-- STANDARD --
+					{
+						Inherit = "@standard",
+						Segments = {
+							["Headlight_flashers"] = {
+								Sequences = {
+									STAGE3 = sequence():Alternate(1,2,9)
+								}
+							}
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { Headlight_flashers = "STAGE3" }
+							}
+						}
+					},
+					-- VISION --
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( -10, 108, 26 ),
+						Angles = Angle( 0, 95, 0 ),
+						Scale = 0.9,
+					},
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( 10, 108, 26 ),
+						Angles = Angle( 0, 85, 0 ),
+						Scale = 0.9,
+						Phase = 45,
+					},
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( -22, -74.5, 48 ),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_fedsig_gh1_ocso",
+						Position = Vector( 22, -74.5, 48 ),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						Phase = 180,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				}
+			},
+			{
+				Option = "2010 - 2011 (Whelen Liberty)", 
 				Props = {
 					{
 						Model = "models/supermighty/photon/whelen_liberty_ocso.mdl",
@@ -214,70 +282,6 @@ VEHICLE.Equipment = {
 					},
 				}
 			},
-			{
-				Option = "2006 - 2008 (Code3 MX7000)",
-				Props = {
-					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 4.2, 25 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
-					}
-				},
-				Components = {
-					-- STANDARD --
-					{
-						Inherit = "@standard",
-						Segments = {
-							["Headlight_flashers"] = {
-								Sequences = {
-									STAGE3 = sequence():Alternate(1,2,9)
-								}
-							}
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = { Headlight_flashers = "STAGE3" }
-							}
-						}
-					},
-					-- MX7000 --
-					{
-						Component = "photon_c3_mx7000_ocso",
-						Position = Vector( 0, -19, 66.7 ),
-						Angles = Angle( 0, 180, 1 ),
-						Scale = 1,
-					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -10, 108, 26 ),
-						Angles = Angle( 0, 95, 0 ),
-						Scale = 0.9,
-					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 10, 108, 26 ),
-						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9,
-						Phase = 45,
-					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Phase = 180,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-				}
-			}
 		}
 	},
 	{

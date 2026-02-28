@@ -114,18 +114,18 @@ VEHICLE.Equipment = {
 		Category = "Lightbar",
 		Options = {
             {
-				Option = "Tomar Heliobe",
-				Components = {
+				Option = "Federal Signal Vision", --I'LL GET THIS WORKING LATER
+				Props = {
 					{
-						Component = "photon_tomar_heliobe_ocso",
-						Position = Vector( 0, -19, 67 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1.05,
+						Model = "models/sentry/props/vision.mdl",
+						Position = Vector( 0, -17.5, 67 ),
+						Angles = Angle( 0, 180, 0.5 ),
+						Scale = 1.065,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/heliobe"
-						}
+							[2] = "rin/oshiumi_sheriff/props/vision",
+						},
 					},
-                }
+				}
 			},
 		}
 	},
@@ -331,17 +331,17 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 0, 12.2, 25 ),
-						Angles = Angle( 0, 0, 20 ),
-						Scale = 1,
+						Model = "models/gandhi/props/vision.mdl",
+						Position = Vector( 0, 5.6, 25 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 0.8,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 5.6, 25 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 9, 25.7 ),
+						Angles = Angle( 200, 270, 0 ),
+						Scale = 0.32,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

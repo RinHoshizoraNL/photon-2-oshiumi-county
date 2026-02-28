@@ -150,26 +150,28 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lightbar",
+		Category = "Lighting Setup",
 		Options = {
             {
-				Option = "Code3 MX7000",
-				Components = {
+				Option = "2007 - 2009 (Federal Signal Vision)",
+				Props = {
 					{
-						Component = "photon_c3_mx7000_ocso",
-						Position = Vector( 0, -12, 68.5 ),
-						Angles = Angle( 0, 180, 0 ),
-						Scale = 1.07,
+						Model = "models/gandhi/props/vision.mdl",
+						Position = Vector( 0, 8, 25 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 0.8,
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Grille",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
+					{
+						Model = "models/sentry/props/vision.mdl",
+						Position = Vector( 0, -8, 67.3 ),
+						Angles = Angle( 0, 180, 0 ),
+						Scale = 1.065,
+						SubMaterials = {
+							[2] = "rin/oshiumi_sheriff/props/vision_new",
+						},
+					},
+				},
 				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -184,16 +186,6 @@ VEHICLE.Equipment = {
 						Scale = 0.9,
 						Phase = 45,
 					},
-                }
-			},
-		}
-	},
-	{
-		Category = "Rear Deck",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -16, -74.5, 52.3 ),
@@ -303,20 +295,6 @@ VEHICLE.Equipment = {
 						Model = "models/sentry/props/setina_partition_cvpi.mdl",
 						Position = Vector( 0, 1.5, 0 ),
 						Angles = Angle( 0, 0, 0 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 0, 14.7, 25 ),
-						Angles = Angle( 0, 0, 20 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 8, 25 ),
-						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},

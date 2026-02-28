@@ -492,6 +492,13 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 7.5, 25.7 ),
+						Angles = Angle( 200, 270, 0 ),
+						Scale = 0.32,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
 						Model = "models/schmal/antenna_vhf_2.mdl",
 						Position = Vector( 0, -95, 45.3),
 						Angles = Angle( 0, 0, 0 ),
