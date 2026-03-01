@@ -85,14 +85,14 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, -90, 0 ),
 						Scale = 1.012,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/advantedge"
+							[2] = "rin/oshiumi_sheriff/props/advantedge/glass"
 						},
 						BodyGroups = {
 							["Speaker"] = 1,
-						},
-					},
+						}
+					}
 				}
-			},
+			}
 		}
 	},
 	{
@@ -231,7 +231,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 00 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old",
 						},
 					},
 					{
@@ -240,7 +240,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.99,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old",
 						},
 					},
 				}

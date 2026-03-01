@@ -36,11 +36,11 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0.5, 90, 0 ),
 						Scale = 1.1,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/heliobe"
+							[2] = "rin/oshiumi_sheriff/props/heliobe/glass"
 						}
-					},
+					}
                 }
-			},
+			}
 		}
 	},
 	{
@@ -143,7 +143,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( -5, 271, 00 ),
 						Scale = 1.05,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old",
 						},
 					},
 					{
@@ -158,7 +158,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff_old",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old",
 						},
 					},
 				}

@@ -24,7 +24,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
 				},
@@ -97,7 +97,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_arrive",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_arrive",
 						},
 					},
 					{
@@ -176,7 +176,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
 				},
@@ -249,7 +249,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit_white",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit_white",
 						},
 					},
 				},
@@ -322,7 +322,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
 				},
@@ -655,7 +655,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( -12, 270, 00 ),
 						Scale = 1.02,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff",
 						},
 					},
 					{

@@ -31,7 +31,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
 				}
@@ -55,7 +55,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_chase",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_chase",
 						},
 					},
 				}
@@ -79,7 +79,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
 				}
@@ -103,7 +103,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_credit_white",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit_white",
 						},
 					},
 				}
@@ -168,9 +168,10 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 180, 0 ),
 						Scale = 1.065,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/vision_new",
-						},
-					},
+							[2] = "rin/oshiumi_sheriff/props/vision/glass_new",
+							[3] = "rin/oshiumi_sheriff/props/vision/glass_outer"
+						}
+					}
 				},
 				Components = {
 					{
@@ -200,9 +201,9 @@ VEHICLE.Equipment = {
 						Scale = 1,
 						Phase = 180,
 						RenderGroup = RENDERGROUP_OPAQUE,
-					},
+					}
                 }
-			},
+			}
 		}
 	},
 	{
@@ -329,7 +330,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( -10, -90, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plate_sheriff",
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff",
 						},
 					},
 					{
