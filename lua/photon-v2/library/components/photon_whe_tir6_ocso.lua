@@ -24,7 +24,7 @@ COMPONENT.Templates = {
 			Height	= 2.67,
 			Detail = PhotonMaterial.GenerateLightQuad("rin/oshiumi_sheriff/sprites/whelen_tir6_detail.png").MaterialName,
 			Shape = PhotonMaterial.GenerateLightQuad("rin/oshiumi_sheriff/sprites/whelen_tir6_shape.png").MaterialName,
-			Scale = 1
+			Scale = 1.3
 		}
 	}
 }
@@ -49,6 +49,7 @@ COMPONENT.Segments = {
 		Sequences = {
 			DEBUG = { 1 },
 			["TRIPLE"] = sequence():TripleFlash(0, 1):Stretch(1),
+			["FLASHHOLD"] = sequence():FlashHold(1,2,3):AppendPhaseGap(),
 			["OFF"] = { 0 },
 		}
 	}

@@ -8,6 +8,17 @@ VEHICLE.Author		= "Rin Hoshizora"
 
 local sequence = Photon2.SequenceBuilder.New
 
+local libposy		= -20
+local libposz		= 69.08
+local libtir3fx		= 18.8
+local libtir3fyof	= 6.8
+local libtir3fzof	= 1.1
+local libtir3fmofy 	= 1.196
+local libtir3fmofz 	= 0.042
+
+local libtir3sfx	= 27.27
+local libtir3sfzof	= 1.2725
+
 VEHICLE.Equipment = {
 	{
 		Category = "Livery",
@@ -136,17 +147,48 @@ VEHICLE.Equipment = {
 				Components = {
 					-- STANDARD --
 					{
-						Inherit = "@standard",
+						Name = "@standard",
+						Component = "photon_standard_cvpi10",
 						Segments = {
 							["Headlight_flashers"] = {
 								Sequences = {
 									STAGE3 = sequence():Alternate(1,2,9)
 								}
+							},
+							["Taillight_flashers"] = {
+								Sequences = {
+									STAGE3 = sequence():Alternate(6,7,6)
+								}
+							},
+							["Taillight_flashers_mix"] = {
+								Off = "PASS",
+								Frames = {
+									[1] = "[~RI] 15 16",
+									[2] = "[~RI] 15",
+									[3] = "[~RI] 16",
+								},
+								Sequences = {
+									STAGE3 = sequence():TripleFlash(2,3)
+								}
+							},
+							["Reverse_flashers_mix"] = {
+								Off = "PASS",
+								Frames = {
+									[1] = "17 18",
+									[2] = "17",
+									[3] = "18"
+								},
+								Sequences = {
+									STAGE3 = sequence():Alternate(3,2,6)
+								}
 							}
 						},
 						Inputs = {
 							["Emergency.Warning"] = {
-								["MODE3"] = { Headlight_flashers = "STAGE3" }
+								["MODE3"] = { 
+									Headlight_flashers = "STAGE3",
+									Taillight_flashers = "STAGE3"
+								}
 							}
 						}
 					},
@@ -179,118 +221,6 @@ VEHICLE.Equipment = {
 						Phase = 180,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
-				}
-			},
-			{
-				Option = "2010 - 2011 (Whelen Liberty)", 
-				Props = {
-					{
-						Model = "models/supermighty/photon/whelen_liberty_ocso.mdl",
-						Position = Vector( 0, -20, 68.64-2.841 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 0.91,
-						BodyGroups = {
-							["feet"] = 1
-						},
-						SubMaterials = { 
-							[4] = "rin/oshiumi_sheriff/props/liberty/glass"
-						}
-					},
-					{
-						Name = "@liberty_feet",
-						Model = "models/schmal/whelen_liberty_48.mdl",
-						Position = Vector( 0, -20, 68.64 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 0.91,
-						Bones = {
-							-- INVISIBLE, DISAPPEAR, FUCK OFF!!!! --
-							["liberty"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["lens"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["fi_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["fm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["fo_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["ri_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["rm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-							["ro_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
-
-							["foot_l"] = { Vector( -3.25, 0, 0), Angle( 0, 0, 0 ), 1 },
-							["foot_r"] = { Vector( 3.25, 0, 0), Angle( 0, 0, 0 ), 1 },
-							["strap_l"] = { Vector( -5.5, 0, 0.9), Angle( 0, 0, 0 ), 1 },
-							["strap_r"] = { Vector( 5.5, 0, 0.9), Angle( 0, 0, 0 ), 1 }
-						}
-					},
-					{
-						Model = "models/tdmcars/emergency/equipment/whelen_295slsa6.mdl",
-						Position = Vector( 0, 4.5, 24 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1
-					}
-				},
-				Components = {
-					-- STANDARD --
-					{
-						Name = "@standard",
-						Component = "photon_standard_cvpi10",
-						Segments = {
-							["Headlight_flashers"] = {
-								Sequences = {
-									STAGE3 = sequence():Alternate(1,2,9)
-								}
-							}
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = { Headlight_flashers = "STAGE3" }
-							}
-						}
-					},
-					-- GRILLE LIGHTS --
-					{
-						Name = "@grille_tir6",
-						Component = "ocso_photon_whe_tir6",
-						Position = Vector( 10.1, 107.3, 31.9 ),
-						Angles = Angle( 180, -3, 0 ),
-						Scale = 1
-					},
-					{
-						Inherit = "@grille_tir6",
-						Position = Vector( -10.1, 107.3, 31.9 ),
-						Angles = Angle( 180, 3, 0 ),
-					},
-					-- REAR SLIMLIGHTER --
-					{
-						Component = "lr_photon_whe_sl_ocso",
-						Position = Vector( 0, -78.1, 52.4 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Bones = {
-							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -55 ), 1 }
-						},
-						BodyGroups = {
-							["lighthead"] = 0,
-							["wire"] = 0,
-							["mount"] = 0
-						},
-						States = { "R", "R" },
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {All = "OFF"},
-								["MODE2"] = {All = "ALTERNATE"},
-								["MODE3"] = {All = "RESPONSE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE
-					},
-				}
-			},
-		}
-	},
-	{
-		Category = "Siren",
-		Options = {
-			{
-				Option = "Federal Signal Smart Siren",
-				Components = {
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
@@ -310,7 +240,199 @@ VEHICLE.Equipment = {
 						Inputs = { 
 							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
 						}
+					}
+				}
+			},
+			{
+				Option = "2010 - 2011 (Whelen Liberty)", 
+				Props = {
+					{
+						Name = "@liberty_feet",
+						Model = "models/schmal/whelen_liberty_48.mdl",
+						Position = Vector( 0, libposy, libposz ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.91,
+						Bones = {
+							-- INVISIBLE, DISAPPEAR, FUCK OFF!!!! --
+							["liberty"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["lens"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fi_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["fo_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["ri_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["rm_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+							["ro_linear"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 0 },
+
+							["foot_l"] = { Vector( -5.8, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["foot_r"] = { Vector( 5.8, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["strap_l"] = { Vector( -5.3, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["strap_r"] = { Vector( 5.3, 0, 0), Angle( 0, 0, 0 ), 1 }
+						}
 					},
+					{
+						Model = "models/tdmcars/emergency/equipment/whelen_295slsa6.mdl",
+						Position = Vector( 0, 4.5, 24 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 1
+					},
+					{
+						Name = "@pushbar_tir3_ff_mount",
+						Model = "models/props_phx/construct/plastic/plastic_panel1x1.mdl",
+						Position = Vector( -libtir3fx, libposy+libtir3fyof-libtir3fmofy, libposz-libtir3fzof+libtir3fmofz ),
+						Angles = Angle( 0, 0, -90 ),
+						Scale = Vector( 0.0923, 0.0395, 0.065 ),
+						SubMaterials = { 
+							[0] = "sentry/cvpi_hd/black",
+							[1] = "sentry/cvpi_hd/black"
+						}
+					},
+					{
+						Inherit = "@pushbar_tir3_ff_mount",
+						Position = Vector( libtir3fx, libposy+libtir3fyof-libtir3fmofy, libposz-libtir3fzof+libtir3fmofz )
+					},
+					{
+						Inherit = "@pushbar_tir3_ff_mount",
+						Position = Vector( -libtir3sfx+libtir3fmofy, libposy, libposz-libtir3sfzof ),
+						Angles = Angle( 0, 90, -90 )
+					},
+					{
+						Inherit = "@pushbar_tir3_ff_mount",
+						Position = Vector( libtir3sfx-libtir3fmofy, libposy, libposz-libtir3sfzof ),
+						Angles = Angle( 0, -90, -90 )
+					}
+				},
+				Components = {
+					-- STANDARD --
+					{
+						Inherit = "@standard",
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { 
+									Headlight_flashers = "STAGE3",
+									Taillight_flashers_mix = "STAGE3",
+									Reverse_flashers_mix = "STAGE3"
+								}
+							}
+						}
+					},
+					-- LIBERTY --
+					{
+						Component = "photon_whe_liberty_ocso",
+						Position = Vector( 0, libposy, libposz-2.841 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.91
+					},
+					-- LIBERTY TIR3s --
+					-- FRONT
+					{
+						Name = "@lightbar_tir3",
+						Component = "anemolis_whelen_tir3",
+						Position = Vector( -libtir3fx, libposy+libtir3fyof, libposz-libtir3fzof ),
+						Angles = Angle( 180, 0, 0 ),
+						Scale = 0.78, -- Realistic scale btw
+						States = { "R" },
+						Segments = {
+							whelen_tir3 = {
+								Sequences = {
+									["STAGE2"] = sequence():Alternate(1,0,8),
+									["STAGE3"] = sequence():FlashHold(1,2,4):AppendPhaseGap()
+								}
+							}
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {},
+								["MODE2"] = { whelen_tir3 = "STAGE2:180" },
+								["MODE3"] = { whelen_tir3 = "STAGE3" }
+							}
+						}
+					},
+					{
+						Inherit = "@lightbar_tir3",
+						Position = Vector( libtir3fx, libposy+libtir3fyof, libposz-libtir3fzof ),
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE2"] = { whelen_tir3 = "STAGE2" },
+								["MODE3"] = { whelen_tir3 = "STAGE3:180" }
+							}
+						}
+					},
+					-- SIDES
+					{
+						Inherit = "@lightbar_tir3",
+						Position = Vector( -libtir3sfx, libposy, libposz-libtir3sfzof ),
+						Angles = Angle( 180, 90, 0 ),
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE2"] = {},
+								["MODE3"] = { whelen_tir3 = "STAGE3:180" }
+							}
+						}
+					},
+					{
+						Inherit = "@lightbar_tir3",
+						Position = Vector( libtir3sfx, libposy, libposz-libtir3sfzof ),
+						Angles = Angle( 180, -90, 0 ),
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE2"] = {},
+								["MODE3"] = { whelen_tir3 = "STAGE3" }
+							}
+						}
+					},
+					-- GRILLE LIGHTS --
+					{
+						Name = "@grille_tir6",
+						Component = "ocso_photon_whe_tir6",
+						Position = Vector( 10.1, 107.3, 31.9 ),
+						Angles = Angle( 180, -3, 0 ),
+						Scale = 1,
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {},
+								["MODE2"] = {},
+								["MODE3"] = { All = "FLASHHOLD" }
+							}
+						}
+					},
+					{
+						Inherit = "@grille_tir6",
+						Position = Vector( -10.1, 107.3, 31.9 ),
+						Angles = Angle( 180, 3, 0 ),
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { All = "FLASHHOLD:160" }
+							}
+						}
+					},
+					-- REAR SLIMLIGHTER --
+					{
+						Component = "lr_photon_whe_sl_ocso",
+						Position = Vector( 0, -78.1, 52.4 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 1,
+						Bones = {
+							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -55 ), 1 }
+						},
+						BodyGroups = {
+							["lighthead"] = 0,
+							["wire"] = 1,
+							["mount"] = 0
+						},
+						States = { "R", "R" },
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE1"] = {},
+								["MODE2"] = {},
+								["MODE3"] = { All = "ALTERNATE" },
+							},
+						},
+						RenderGroup = RENDERGROUP_OPAQUE
+					},
+					{
+						Inherit = "@siren_speaker",
+						Siren = "whelen_295hfsa6"
+					}
 				}
 			}
 		}
@@ -356,15 +478,31 @@ VEHICLE.Equipment = {
 		Category = "Spotlight",
 		Options = {
 			{
-				Option = "Pillar Spotlight",
+				Option = "Pillar Spotlight Single (Chrome)",
 				Components = {
 					{
+						Name = "@spotlight",
 						Component = "photon_par46_left",
 						Position = Vector( -35.06, 26.46, 49.282 ),
 						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[5] = "sentry/shared/env_cubemap_model"
+						}
+					}
+                },
+				BodyGroups = {
+					{ BodyGroup = "door_l_notch", Value = 0 },
+					{ BodyGroup = "door_r_notch", Value = 1 },
+				}
+			},
+			{
+				Option = "Pillar Spotlight Single (Black)",
+				Components = {
+					{
+						Inherit = "@spotlight",
+						SubMaterials = {
+							[5] = "sentry/props/spotlight/black_lamp"
 						}
 					}
                 },

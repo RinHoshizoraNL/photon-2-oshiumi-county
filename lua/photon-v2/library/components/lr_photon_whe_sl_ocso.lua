@@ -74,7 +74,7 @@ COMPONENT.Segments = {
 		},
 		Sequences = {
 			DEBUG = { 1 },
-            ["ALTERNATE"] = sequence():Alternate(2,3,3),
+            ["ALTERNATE"] = sequence():Alternate(2,3,2),
 			["CRUISE"] = { 1 },
 			["CRUISEA"] = { 2 },
 			["CRUISEB"] = { 3 },
