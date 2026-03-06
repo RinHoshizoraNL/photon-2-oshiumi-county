@@ -401,7 +401,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 180, 3, 0 ),
 						Inputs = {
 							["Emergency.Warning"] = {
-								["MODE3"] = { All = "FLASHHOLD:160" }
+								["MODE3"] = { All = "FLASHHOLD" }
 							}
 						}
 					},

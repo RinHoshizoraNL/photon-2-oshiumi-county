@@ -121,6 +121,13 @@ VEHICLE.Equipment = {
 				Option = "2015-2017 (SoundOff Signal nForce)",
 				Props = {
 					{
+						Model = "models/sentry/props/sosnergy.mdl",
+						Position = Vector( 1.5, 2, 29 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 0.88,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
 						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
 						Position = Vector( -9, -85, 54.5),
 						Angles = Angle( 0, 270, 0 ),
@@ -355,16 +362,16 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Federal Signal Smart Siren",
+				Option = "Soundoff nErgy 400",
 				Components = {
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
-						Model = "models/gandhi/props/es100.mdl",
-						Position = Vector( 0, 99, 29.3 ),
+						Model = "models/gandhi/props/100j.mdl",
+						Position = Vector( 0, 99, 30 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "fedsig_smartsiren",
+						Siren = "sos_nergy400",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -373,9 +380,6 @@ VEHICLE.Equipment = {
 								}
 							}
 						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
-						}
 					},
 				}
 			}
@@ -422,17 +426,10 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 1.5, 8.6, 29 ),
-						Angles = Angle( 0, 0, 20 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 1.5, 2.2, 29 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 1.5, 10.8, 32 ),
+						Angles = Angle( 200, 270, 0 ),
+						Scale = 0.33,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

@@ -444,7 +444,7 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Federal Signal Smart Siren",
+				Option = "Soundoff nErgy 400",
 				Components = {
 					{
 						Name = "@siren_speaker",
@@ -453,7 +453,7 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 111, 18 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "fedsig_pathfinder_ssp",
+						Siren = "sos_nergy400",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -462,9 +462,6 @@ VEHICLE.Equipment = {
 								}
 							}
 						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
-						}
 					},
 				}
 			}
@@ -573,17 +570,17 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/tactld1.mdl",
-						Position = Vector( 0, 8.6, 29 ),
-						Angles = Angle( 0, 0, 20 ),
-						Scale = 1,
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 10.8, 32 ),
+						Angles = Angle( 200, 270, 0 ),
+						Scale = 0.33,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/photon_ex/controllers/fedsig_scsb.mdl",
-						Position = Vector( 0, 2.2, 29 ),
+						Model = "models/sentry/props/sosnergy.mdl",
+						Position = Vector( 0, 2.1, 29 ),
 						Angles = Angle( 20, 270, 0 ),
-						Scale = 1,
+						Scale = 0.9,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

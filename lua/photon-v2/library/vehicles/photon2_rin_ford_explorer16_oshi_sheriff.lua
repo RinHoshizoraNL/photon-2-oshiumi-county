@@ -1,12 +1,15 @@
-
 if (Photon2.ReloadVehicleFile()) then return end
 local VEHICLE = Photon2.LibraryVehicle()
 
-VEHICLE.Title 		= "2020 Ford Explorer OCSO"
-VEHICLE.Vehicle		= "20fpiu_new_sgm"
+VEHICLE.Title 		= "2016 Ford Explorer OCSO"
+VEHICLE.Vehicle		= "sm16fpiu"
 VEHICLE.Category 	= "Photon 2: Oshiumi County Sheriff"
 VEHICLE.Author		= "Rin Hoshizora"
 
+VEHICLE.SubMaterials = {
+	[5] = "photon/common/blank",
+	[28] = "photon/common/blank",
+}
 
 VEHICLE.Equipment = {
 	{
@@ -15,24 +18,36 @@ VEHICLE.Equipment = {
 			{
 				Option = "Patrol",
 				SubMaterials = {
-					{ Id = 20, Material = "rin/oshiumi_sheriff/explorer20/patrol" }
+					{ Id = 15, Material = "rin/oshiumi_sheriff/explorer16/patrol" }
 				},
+                BodyGroups = {
+					{ BodyGroup = "pushbar", Value = 0 },
+                },
 				Props = {
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 120.7, 26.5 ),
+						Position = Vector( 0, 118.8, 26.5 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
+						Scale = 1.06,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
+					{
+						Model = "models/schmal/sm_fpiu16_glass.mdl",
+						Position = Vector( 0, 0, 0 ),
+						Angles = Angle( 0, -90, 0 ),
+						SubMaterials = {
+							[1] = "schmal/liveries/sm_fpiu16/lvmpd_modulate",
+							[2] = "rin/oshiumi_sheriff/explorer16/ocso_glass",
+						}
+					}
 				},
 				Components = {
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -13, 114.5, 45 ),
+						Angles = Angle( 0, 97, 0 ),
+						Position = Vector( -12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -44,8 +59,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 13, 114.5, 45 ),
+						Angles = Angle( 0, 83, 0 ),
+						Position = Vector( 12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -57,8 +72,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, -3, 2 ),
-						Position = Vector( -49, 76.5, 44.5 ),
+						Angles = Angle( 180, -2, 2 ),
+						Position = Vector( -48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -71,8 +86,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, 3, -2 ),
-						Position = Vector( 49, 76.5, 44.5 ),
+						Angles = Angle( 0, 2, -2 ),
+						Position = Vector( 48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -84,34 +99,40 @@ VEHICLE.Equipment = {
 						},
 					},
 				}
-			},
+            },
 			{
 				Option = "Highway Patrol",
 				SubMaterials = {
-					{ Id = 20, Material = "rin/oshiumi_sheriff/explorer20/highway" }
+					{ Id = 15, Material = "rin/oshiumi_sheriff/explorer16/highway" }
 				},
+                BodyGroups = {
+					{ BodyGroup = "pushbar", Value = 1 },
+                },
 				Props = {
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 120.7, 26.5 ),
+						Position = Vector( 0, 118.8, 26.5 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
+						Scale = 1.06,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_arrive",
 						},
 					},
 					{
-						Model = "models/sentry/props/westin_36-2125.mdl",
+						Model = "models/schmal/sm_fpiu16_glass.mdl",
 						Position = Vector( 0, 0, 0 ),
-						Angles = Angle( 0, 0, 0 ),
-						Scale = 1,
-					},
+						Angles = Angle( 0, -90, 0 ),
+						SubMaterials = {
+							[1] = "schmal/liveries/sm_fpiu16/lvmpd_modulate",
+							[2] = "rin/oshiumi_sheriff/explorer16/ocso_glass",
+						}
+					}
 				},
 				Components = {
 					{
 						Component = "photon_sos_mpf4_ocso",
 						Angles = Angle( 0, 90, 0 ),
-						Position = Vector( -9, 117.3, 53.5 ),
+						Position = Vector( -12, 118.8, 49.6 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -124,7 +145,7 @@ VEHICLE.Equipment = {
 					{
 						Component = "photon_sos_mpf4_ocso",
 						Angles = Angle( 0, 90, 0 ),
-						Position = Vector( 9, 117.3, 53.5 ),
+						Position = Vector( 12, 118.8, 49.6 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -137,7 +158,7 @@ VEHICLE.Equipment = {
 					{
 						Component = "photon_sos_mpf3_ocso",
 						Angles = Angle( 180, 0, 0 ),
-						Position = Vector( -16.8, 122.5, 40 ),
+						Position = Vector( -21, 123.2, 35 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -151,7 +172,7 @@ VEHICLE.Equipment = {
 					{
 						Component = "photon_sos_mpf3_ocso",
 						Angles = Angle( 0, 0, 0 ),
-						Position = Vector( 16.8, 122.5, 40 ),
+						Position = Vector( 21, 123.2, 35 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -163,28 +184,40 @@ VEHICLE.Equipment = {
 						},
 					},
 				}
-			},
+            },
 			{
 				Option = "Supervisor",
 				SubMaterials = {
-					{ Id = 20, Material = "rin/oshiumi_sheriff/explorer20/supervisor" }
+					{ Id = 15, Material = "rin/oshiumi_sheriff/explorer16/supervisor" }
 				},
+                BodyGroups = {
+					{ BodyGroup = "pushbar", Value = 0 },
+                },
 				Props = {
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 120.7, 26.5 ),
+						Position = Vector( 0, 118.8, 26.5 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
+						Scale = 1.06,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
 						},
 					},
+					{
+						Model = "models/schmal/sm_fpiu16_glass.mdl",
+						Position = Vector( 0, 0, 0 ),
+						Angles = Angle( 0, -90, 0 ),
+						SubMaterials = {
+							[1] = "schmal/liveries/sm_fpiu16/lvmpd_modulate",
+							[2] = "rin/oshiumi_sheriff/explorer16/ocso_glass",
+						}
+					}
 				},
 				Components = {
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -13, 114.5, 45 ),
+						Angles = Angle( 0, 97, 0 ),
+						Position = Vector( -12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -196,8 +229,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 13, 114.5, 45 ),
+						Angles = Angle( 0, 83, 0 ),
+						Position = Vector( 12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -209,8 +242,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, -3, 2 ),
-						Position = Vector( -49, 76.5, 44.5 ),
+						Angles = Angle( 180, -2, 2 ),
+						Position = Vector( -48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -223,8 +256,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, 3, -2 ),
-						Position = Vector( 49, 76.5, 44.5 ),
+						Angles = Angle( 0, 2, -2 ),
+						Position = Vector( 48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -236,28 +269,40 @@ VEHICLE.Equipment = {
 						},
 					},
 				}
-			},
+            },
 			{
 				Option = "Command",
 				SubMaterials = {
-					{ Id = 20, Material = "rin/oshiumi_sheriff/explorer20/command" }
+					{ Id = 15, Material = "rin/oshiumi_sheriff/explorer16/command" }
 				},
+                BodyGroups = {
+					{ BodyGroup = "pushbar", Value = 0 },
+                },
 				Props = {
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 120.7, 26.5 ),
+						Position = Vector( 0, 118.8, 26.5 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
+						Scale = 1.06,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit_white",
 						},
 					},
+					{
+						Model = "models/schmal/sm_fpiu16_glass.mdl",
+						Position = Vector( 0, 0, 0 ),
+						Angles = Angle( 0, -90, 0 ),
+						SubMaterials = {
+							[1] = "schmal/liveries/sm_fpiu16/lvmpd_modulate",
+							[2] = "rin/oshiumi_sheriff/explorer16/ocso_glass",
+						}
+					}
 				},
 				Components = {
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -13, 114.5, 45 ),
+						Angles = Angle( 0, 97, 0 ),
+						Position = Vector( -12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -269,8 +314,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 13, 114.5, 45 ),
+						Angles = Angle( 0, 83, 0 ),
+						Position = Vector( 12.5, 111.5, 44.3 ),
 						Scale = 1,
 						Inputs = {
 							["Emergency.Warning"] = {
@@ -282,8 +327,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, -3, 2 ),
-						Position = Vector( -49, 76.5, 44.5 ),
+						Angles = Angle( 180, -2, 2 ),
+						Position = Vector( -48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -296,8 +341,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, 3, -2 ),
-						Position = Vector( 49, 76.5, 44.5 ),
+						Angles = Angle( 0, 2, -2 ),
+						Position = Vector( 48.2, 71, 43.8 ),
 						Scale = 1,
 						Phase = 180,
 						Inputs = {
@@ -309,56 +354,72 @@ VEHICLE.Equipment = {
 						},
 					},
 				}
-			},
-			{
-				Option = "Recruitment",
-				SubMaterials = {
-					{ Id = 20, Material = "rin/oshiumi_sheriff/explorer20/recruitment" }
-				},
-				Props = {
+            },
+		}
+	},
+	{
+		Category = "Lightbar",
+		Options = {
+			{ Option = "SoundOff Signal nForce", 
+				Variants = {
 					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 120.7, 26.5 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
-						},
+						Variant = "Default",
+						Components = {
+							{
+								Name = "@nforce48",
+								Component = "photon_sos_nforce_48_ocso",
+								Position = Vector( 0, -12, 86.4 ),
+								Angles = Angle( 0, 0, -2 ),
+								Scale = 1.05,
+								Bones = {
+									["foot_l"] = { Vector( -2.4, 0, 0 ), Angle(), 1 },
+									["foot_r"] = { Vector( 2.4, 0, 0 ), Angle(), 1 }
+								}
+							},
+						}
 					},
 				},
+			},
+		},
+	},
+	{
+		Category = "Siren",
+		Options = {
+			{
+				Option = "Soundoff nErgy 400",
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -13, 114.5, 45 ),
+						Name = "@siren_speaker",
+						Component = "siren_prototype",
+						Model = "models/gandhi/props/100j.mdl",
+						Position = Vector( 0, 113, 32 ),
+						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
+						Siren = "sos_nergy400",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
 						},
 					},
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 13, 114.5, 45 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
+				}
+			}
+		}
+	},
+	{
+		Category = "Side",
+		Options = {
+			{
+				Option = "Side",
+				Components = {
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, -3, 2 ),
-						Position = Vector( -49, 76.5, 44.5 ),
+						Angles = Angle( 180, 1.5, 1 ),
+						Position = Vector( -48, -69, 45.5 ),
 						Scale = 1,
-						Phase = 180,
 						Inputs = {
 							["Emergency.Warning"] = {
 								["MODE1"] = {Light = "OFF"},
@@ -369,10 +430,9 @@ VEHICLE.Equipment = {
 					},
 					{
 						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, 3, -2 ),
-						Position = Vector( 49, 76.5, 44.5 ),
+						Angles = Angle( 0, -1.5, -1 ),
+						Position = Vector( 48, -69, 45.5 ),
 						Scale = 1,
-						Phase = 180,
 						Inputs = {
 							["Emergency.Warning"] = {
 								["MODE1"] = {Light = "OFF"},
@@ -396,8 +456,8 @@ VEHICLE.Equipment = {
 			    Props = {
 					{
 						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( 29, 8, 85.9),
-						Angles = Angle( -10, 235, 0 ),
+						Position = Vector( 28.4, 13.5, 84.9),
+						Angles = Angle( -8, 235, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[0] = "rin/lrpd2/props/alpr"
@@ -409,8 +469,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( -29, 8, 85.9),
-						Angles = Angle( -10, -55, 0 ),
+						Position = Vector( -28.4, 13.5, 84.9),
+						Angles = Angle( -8, -55, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[0] = "rin/lrpd2/props/alpr"
@@ -422,8 +482,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( 29, -92.5, 85.3),
-						Angles = Angle( -8, 140, 0 ),
+						Position = Vector( 25.7, -82, 86.65),
+						Angles = Angle( -6, 140, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[0] = "rin/lrpd2/props/alpr"
@@ -435,8 +495,8 @@ VEHICLE.Equipment = {
 					},
 					{
 						Model = "models/anmgenetacautovusharpx/ANMGenetacAutoVuSharpX.mdl",
-						Position = Vector( -29, -92.5, 85.3),
-						Angles = Angle( -8, 40, 0 ),
+						Position = Vector( -25.7, -82, 86.65),
+						Angles = Angle( -6, 40, 0 ),
 						Scale = 1,
 						SubMaterials = {
 							[0] = "rin/lrpd2/props/alpr"
@@ -450,148 +510,26 @@ VEHICLE.Equipment = {
 			},
 		}
 	},
-	{
-		Category = "Siren",
-		Options = {
-			{
-				Option = "Soundoff nErgy 400",
-				Components = {
-					{
-						Name = "@siren_speaker",
-						Component = "siren_prototype",
-						Model = "models/gandhi/props/100j.mdl",
-						Position = Vector( 0, 115, 41 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Siren = "sos_nergy400",
-						Templates = {
-							["Sound"] = { 
-								Tone = {
-									DSP = 0,
-									Pitch = 100
-								}
-							}
-						},
-					},
-				}
-			}
-		}
-	},
-	{
+    {
 		Category = "Wheels",
 		Options = {
 			{
 				Option = "Steelies",
 				BodyGroups = {
-					{ BodyGroup = "hubcaps", Value = 1 },
+					{ BodyGroup = "wheels", Value = 0 },
 				},
 			},
 		}
 	},
-	{
-		Category = "Lightbar",
-		Options = {
-			{
-				Option = "Soundoff Mpower",
-				Components = {
-					{
-						Component = "anemolis_sos_mpower",
-						Position = Vector( 0, -15, 87 ),
-						Angles = Angle( -0.5, 270, 0 ),
-						Scale = 1.15,
-					},
-				}
-			}
-		}
-	},
-	{
-		Category = "Side",
-		Options = {
-			{
-				Option = "Side",
-				Components = {
-					{
-						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, 1.5, 0 ),
-						Position = Vector( -49.2, -73.5, 44.7 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "OFF"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-					{
-						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, -1.5, 0 ),
-						Position = Vector( 49.2, -73.5, 44.7 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "OFF"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-				}
-			},
-		}
-	},
-	{
-		Category = "Plate Lights",
-		Options = {
-			{
-				Option = "Plate Lights",
-				Components = {
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( -12, 270, 90 ),
-						Position = Vector( -8.3, -126.5, 49 ),
-						Scale = 1,
-						States = {
-							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( -12, 270, 90 ),
-						Position = Vector( 8.3, -126.5, 49 ),
-						Scale = 1,
-						Phase = 180,
-						States = {
-							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-				},
-			}
-		}
-	},
-	{
+    {
 		Category = "Spotlight",
 		Options = {
 			{
-				Option = "Spotlight",
+				Option = "PAR46 LED",
 				Components = {
 					{
 						Component = "photon_whe_par46_left",
-						Position = Vector( -39.4, 37, 63 ),
+						Position = Vector( -39, 41, 62 ),
 						Angles = Angle( 0, 0, 0 ),
 						Scale = 1.1,
 						SubMaterials = {
@@ -599,7 +537,7 @@ VEHICLE.Equipment = {
 						}
 					},
 				},
-			}
+			},
 		}
 	},
 	{
@@ -608,67 +546,76 @@ VEHICLE.Equipment = {
 			{
 				Option = "Police Equipment",
 				BodyGroups = {
-					{ BodyGroup = "foglights", Value = 0 },
-					{ BodyGroup = "console", Value = 0 },
-					{ BodyGroup = "laptop", Value = 0 },
-					{ BodyGroup = "pushbar", Value = 0 },
-					{ BodyGroup = "interceptorbadge", Value = 1 },
+					{ BodyGroup = "bobblehead", Value = 6 },
+				},
+                Components = {
+					{
+						Component = "photon_pan_toughbookcf30",
+						Position = Vector( 7.8, 21.5, 48 ),
+						Angles = Angle( 0, 31, 0 ),
+						Scale = 0.9,
+						Options = {
+							Pole = 0,
+							Base = -60,
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
 				},
 				Props = {
 					{
 						Model = "models/supermighty/photon/dashcam.mdl",
-						Position = Vector( 9.5, 18.9, 76.2),
+						Position = Vector( 8.5, 28.5, 72),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
+						Model = "models/sentry/props/sosnergy.mdl",
+						Position = Vector( 0, 11, 35 ),
+						Angles = Angle( 33, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/gandhi/props/radio.mdl",
+						Position = Vector( 0, 14.8, 36.7 ),
+						Angles = Angle( 212, 270, 0 ),
+						Scale = 0.32,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
 						Model = "models/schmal/antenna_lojack.mdl",
-						Position = Vector( -3.1, -40, 85.6 ),
-						Angles = Angle( 0, 0, 1 ),
+						Position = Vector( -4.9, -40, 85.3 ),
+						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
 					},
 					{
 						Model = "models/schmal/antenna_lojack.mdl",
-						Position = Vector( 3.1, -40, 85.6 ),
-						Angles = Angle( 0, 0, 1 ),
+						Position = Vector( 4.9, -40, 85.3 ),
+						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
 					},
 					{
 						Model = "models/schmal/antenna_gps.mdl",
-						Position = Vector( 0, -60, 85.3 ),
-						Angles = Angle( 0, 0, 2.5 ),
+						Position = Vector( 0, -60, 85 ),
+						Angles = Angle( 0, 0, 1.5 ),
 						Scale = 1,
 					},
 					{
 						Model = "models/schmal/antenna_data.mdl",
-						Position = Vector( 0, -30, 86 ),
-						Angles = Angle( 0, 0, 1 ),
+						Position = Vector( 0, -30, 84.7 ),
+						Angles = Angle( 0, 0, -1 ),
 						Scale = 1,
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, -126.67, 49 ),
-						Angles = Angle( -12, 270, 00 ),
+						Position = Vector( 0, -120.5, 50 ),
+						Angles = Angle( -18, 270, 00 ),
 						Scale = 1.02,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff",
 						},
 					},
-					{
-						Model = "models/supermighty/photon/front_holder.mdl",
-						Position = Vector( 0, 120, 26.5 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1
-					},
-					{
-						Model = "models/schmal/sgm_fpiu20_win.mdl",
-						Position = Vector(),
-						Angles = Angle(0, 0, 0),
-						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/explorer20/ocso_glass"
-						}
-					}
 				}
 			}
 		}
