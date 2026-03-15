@@ -105,26 +105,16 @@ VEHICLE.Equipment = {
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
+						Scale = 1
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-					},
+						Scale = 1
+					}
                 }
-			},
+			}
 		}
 	},
 	{

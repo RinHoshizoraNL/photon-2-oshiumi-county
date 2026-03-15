@@ -22,13 +22,7 @@ COMPONENT.Preview = {
 }
 
 COMPONENT.SubMaterials = {
-	[0] = "rin/oshiumi_sheriff/props/mx7k/mx7000_glass_colored",
-	[1] = "rin/oshiumi_sheriff/props/mx7k/mx7000_glass_outer",
-	[2] = "rin/oshiumi_sheriff/props/mx7k/mx7k",
-	[3] = "rin/oshiumi_sheriff/props/mx7k/glass_mx7000",
-	-- [2] = "photon/textures/mx7000",
-	-- [0] = nil,
-	-- [2] = nil
+	[0] = "rin/oshiumi_sheriff/props/mx7k/mx7000_glass_colored"
 }
 
 local blue = { r = 0, g = 255, b = 255 }

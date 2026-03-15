@@ -1,0 +1,7 @@
+"DecalModulate"
+{
+	"$basetexture" "rin/oshiumi_sheriff/props/gh1/glass_color_red"
+	"$nocull" "1"
+	"$model" "1"
+}
+

@@ -1,17 +1,7 @@
-"Modulate"
+"DecalModulate"
 {
 	"$basetexture" "rin/oshiumi_sheriff/props/vision/glass_new"
-	"$mod2x" "1"
 	"$nocull" "1"
-	"$carpenisenabled" "[0.65 0.65 0.65]"
-	Proxies // proxies are listed inside this block
-	{
-		Equals // a proxy which produces a penis
-		{
-			srcVar1 $carpenisenabled
-			resultVar	$color // The shader parameter to be manipulated
-
-		}
-	}
+	"$model" "1"
 }
 

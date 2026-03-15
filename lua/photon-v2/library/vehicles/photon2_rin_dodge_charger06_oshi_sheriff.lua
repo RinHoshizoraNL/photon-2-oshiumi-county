@@ -163,13 +163,13 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/vision.mdl",
+						Model = "models/lilranbay/props/sgm_vision.mdl",
 						Position = Vector( 0, -8, 67.3 ),
 						Angles = Angle( 0, 180, 0 ),
 						Scale = 1.065,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/vision/glass_new",
-							[3] = "rin/oshiumi_sheriff/props/vision/glass_outer"
+							[1] = "rin/oshiumi_sheriff/props/vision/glass_new",
+							[2] = "rin/oshiumi_sheriff/props/vision/glass_outer"
 						}
 					}
 				},

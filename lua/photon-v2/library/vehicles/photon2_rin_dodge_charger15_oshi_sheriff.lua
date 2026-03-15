@@ -8,6 +8,17 @@ VEHICLE.Author		= "Rin Hoshizora"
 
 local sequence = Photon2.SequenceBuilder.New
 
+VEHICLE.Siren = {
+    [1] = {
+		T1 = "sos_nergy400/wail",
+		T2 = "sos_nergy400/yelp",
+		T3 = "sos_nergy400/piercer",
+		T4 = "sos_nergy400/alert",
+		AIR = "sos_nergy400/airhorn",
+		MAN = "sos_nergy400/wail"
+	}
+}
+
 VEHICLE.Equipment = {
 	{
 		Category = "Livery",
@@ -453,7 +464,7 @@ VEHICLE.Equipment = {
 						Position = Vector( 0, 111, 18 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "sos_nergy400",
+						Siren = 1,
 						Templates = {
 							["Sound"] = { 
 								Tone = {

@@ -117,13 +117,13 @@ VEHICLE.Equipment = {
 				Option = "Federal Signal Vision", --I'LL GET THIS WORKING LATER
 				Props = {
 					{
-						Model = "models/sentry/props/vision.mdl",
+						Model = "models/lilranbay/props/sgm_vision.mdl",
 						Position = Vector( 0, -17.8, 66 ),
 						Angles = Angle( 0, 180, 0.5 ),
 						Scale = 0.99,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/vision/glass",
-							[3] = "rin/oshiumi_sheriff/props/vision/glass_outer"
+							[1] = "rin/oshiumi_sheriff/props/vision/glass",
+							[2] = "rin/oshiumi_sheriff/props/vision/glass_outer"
 						}
 					}
 				}
@@ -140,26 +140,16 @@ VEHICLE.Equipment = {
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -8.5, 108, 26 ),
 						Angles = Angle( 0, 95, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
+						Scale = 0.9
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 8.5, 108, 26 ),
 						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-					},
+						Scale = 0.9
+					}
                 }
-			},
+			}
 		}
 	},
 	{
@@ -173,12 +163,7 @@ VEHICLE.Equipment = {
 						Position = Vector( -22, -74.5, 48 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -186,15 +171,10 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
+						RenderGroup = RENDERGROUP_OPAQUE
+					}
                 }
-			},
+			}
 		}
 	},
 	{

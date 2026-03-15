@@ -132,16 +132,6 @@ VEHICLE.Equipment = {
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 0.8,
 						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Model = "models/sentry/props/vision.mdl",
-						Position = Vector( 0, -17.8, 66 ),
-						Angles = Angle( 0, 180, 0.5 ),
-						Scale = 0.99,
-						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/vision/glass_new",
-							[3] = "rin/oshiumi_sheriff/props/vision/glass_outer"
-						}
 					}
 				},
 				Components = {
@@ -194,32 +184,71 @@ VEHICLE.Equipment = {
 					},
 					-- VISION --
 					{
+						Component = "lr_photon_fedsig_vision_ocso",
+						Position = Vector( 0, -17.8, 65.63 ),
+						Angles = Angle( 0, 180, 0 ),
+						Scale = 0.98, -- Accurate (mostly) scale, when placing on other cars just adjust the straps. (I'd recommend checking an IRL car with a Vision mounted to double check the scale is correct)
+						SubMaterials = {
+							[1] = "rin/oshiumi_sheriff/props/vision/glass_new",
+							[2] = "rin/oshiumi_sheriff/props/vision/glass_outer_new"
+						},
+						BodyGroups = {
+							-- Rear Signalmaster
+							["rear_ta"] = 0,
+							-- Straps/Mounts (If you remove the mounts, always remove the straps)
+							["straps"] = 0,
+							["mounts"] = 0,
+							-- Pods/Decal (0 = Vision, 1 = Vision SL)
+							["center_pod"] = 1,
+							["inner_pod"] = 0,
+							["middle_pod"] = 1,
+							["outer_pod"] = 1,
+							["decal"] = 1
+						},
+						Bones = {
+							-- In most cases, you won't need to move the mounts, just the straps.
+							["mount_l"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["mount_r"] = { Vector( 0, 0, 0), Angle( 0, 0, 0 ), 1 },
+							["strap_l"] = { Vector( 0, 0.5, -0.1), Angle( 0, 0, 0 ), 1 },
+							["strap_r"] = { Vector( 0, -0.5, -0.1), Angle( 0, 0, 0 ), 1 }
+						}
+					},
+					-- GRILLE LIGHTS --
+					{
+						Name = "@grille_gh1",
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -10, 108, 26 ),
-						Angles = Angle( 0, 95, 0 ),
+						Angles = Angle( 0, 90+5, 0 ),
 						Scale = 0.9,
+						SubMaterials = {
+							[2] = "rin/oshiumi_sheriff/props/gh1/glass_color_red",
+							[3] = "rin/oshiumi_sheriff/props/gh1/glass_outer"
+						}
 					},
 					{
+						Inherit = "@grille_gh1",
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 10, 108, 26 ),
-						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9,
-						Phase = 45,
+						Angles = Angle( 0, 90-5, 0 ),
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { Halogen = "STAGE3:180" }
+							}
+						}
 					},
 					{
-						Component = "photon_fedsig_gh1_ocso",
+						Inherit = "@grille_gh1",
+						Name = "@rear_gh1",
 						Position = Vector( -22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
+						Angles = Angle( 0, -90, 0 ),
 						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
+						Inherit = "@rear_gh1",
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Phase = 180,
-						RenderGroup = RENDERGROUP_OPAQUE,
+						Phase = 180
 					},
 					{
 						Name = "@siren_speaker",

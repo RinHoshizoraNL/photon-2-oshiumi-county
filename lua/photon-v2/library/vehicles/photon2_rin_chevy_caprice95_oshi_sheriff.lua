@@ -117,13 +117,13 @@ VEHICLE.Equipment = {
 				Option = "Federal Signal Vision", --I'LL GET THIS WORKING LATER
 				Props = {
 					{
-						Model = "models/sentry/props/vision.mdl",
+						Model = "models/lilranbay/props/sgm_vision.mdl",
 						Position = Vector( 0, -18.5, 58.5 ),
 						Angles = Angle( 0, 180, 0 ),
 						Scale = 1.075,
 						SubMaterials = {
-							[2] = "rin/oshiumi_sheriff/props/vision/glass",
-							[3] = "rin/oshiumi_sheriff/props/vision/glass_outer"
+							[1] = "rin/oshiumi_sheriff/props/vision/glass",
+							[2] = "rin/oshiumi_sheriff/props/vision/glass_outer"
 						}
 					}
 				}
@@ -140,26 +140,16 @@ VEHICLE.Equipment = {
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
+						Scale = 1
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 9, 104, 20.3 ),
 						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-					},
+						Scale = 1
+					}
                 }
-			},
+			}
 		}
 	},
 	{
@@ -173,12 +163,7 @@ VEHICLE.Equipment = {
 						Position = Vector( -18, -74.5, 41 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -186,12 +171,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
                 },
 				Props = {

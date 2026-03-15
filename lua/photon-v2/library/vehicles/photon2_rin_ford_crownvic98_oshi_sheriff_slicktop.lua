@@ -164,24 +164,14 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 180 ),
 						Scale = 0.8,
 						Phase = 90,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 0, 13, 63.4 ),
 						Angles = Angle( 0, 90, 180 ),
 						Scale = 0.8,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -189,12 +179,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 90, 180 ),
 						Scale = 0.8,
 						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
                 }
 			},
@@ -210,26 +195,16 @@ VEHICLE.Equipment = {
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( -8.5, 108, 26 ),
 						Angles = Angle( 0, 95, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
+						Scale = 0.9
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
 						Position = Vector( 8.5, 108, 26 ),
 						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE3"] = {Light = "HALOGEN"},
-							},
-						},
-					},
+						Scale = 0.9
+					}
                 }
-			},
+			}
 		}
 	},
 	{
@@ -243,14 +218,14 @@ VEHICLE.Equipment = {
 						Position = Vector( -18.7, -68, 45),
 						Angles = Angle( 0, 0, 0 ),
 						Scale = Vector( 1, 1, 2),
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Model = "models/schmal/antenna_gps.mdl",
 						Position = Vector( 18.7, -68, 45),
 						Angles = Angle( 0, 0, 0 ),
 						Scale = Vector( 1, 1, 2),
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 				},
 				Components = {
@@ -266,12 +241,7 @@ VEHICLE.Equipment = {
 						Position = Vector( -22, -68, 53.4 ),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -285,7 +255,7 @@ VEHICLE.Equipment = {
 						States = {
 							[1] = "SW",
 						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -293,12 +263,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "STROBE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
 					{
 						Component = "photon_fedsig_gh1_ocso",
@@ -311,7 +276,7 @@ VEHICLE.Equipment = {
 						States = {
 							[1] = "SW",
 						},
-						RenderGroup = RENDERGROUP_OPAQUE,
+						RenderGroup = RENDERGROUP_OPAQUE
 					},
                 }
 			},
