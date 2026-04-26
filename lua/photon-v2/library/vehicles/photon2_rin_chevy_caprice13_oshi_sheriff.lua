@@ -118,15 +118,8 @@ VEHICLE.Equipment = {
 		Category = "Lighting Setup",
 		Options = {
 			{
-				Option = "2015-2017 (SoundOff Signal nForce)",
+				Option = "Federal Vision SLR",
 				Props = {
-					{
-						Model = "models/sentry/props/sosnergy.mdl",
-						Position = Vector( 1.5, 2, 29 ),
-						Angles = Angle( 20, 270, 0 ),
-						Scale = 0.88,
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
 					{
 						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
 						Position = Vector( -9, -85, 54.5),
@@ -158,130 +151,66 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_nforce_48_ocso", --LIGHTBAR
-						Position = Vector( 0, -19, 70.6 ),
-						Angles = Angle( 0, 0, -2 ),
+						Component = "photon_fedsig_visionslr_ocso",
+						Position = Vector( 0, -17, 71.5 ),
+						Angles = Angle( 2, 90, 0 ),
 						Scale = 0.9,
-						Bones = {
-								["foot_l"] = { Vector( -1, 0, 0 ), Angle(), 1 },
-								["foot_r"] = { Vector( 1, 0, 0 ), Angle(), 1 }
-						}
-				    },
-					{
-						Component = "photon_sos_mpf4_ocso", --GRILLE
-						Angles = Angle( 0, 98, 0 ),
-						Position = Vector( -12, 99.5, 33.5 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, 0 ),
-						Position = Vector( 12, 99.5, 33.5 ),
+						Component = "photon_fedsig_micropulse_ultra", --GRILLE
+						Angles = Angle( 0, 8, 0 ),
+						Position = Vector( -12, 99.5, 33 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso", --SIDE
-						Angles = Angle( 200, -2, 4 ),
-						Position = Vector( -40.5, 46, 37.8 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, -8, 0 ),
+						Position = Vector( 12, 99.5, 33 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( -20, 2, -4 ),
-						Position = Vector( 40.5, 46, 37.8 ),
+						Component = "photon_fedsig_micropulse_ultra", --SIDE
+						Angles = Angle( 4, 88, 4 ),
+						Position = Vector( -41, 46, 37.8 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso", --REAR
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( -9, -85, 54.5 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( -4, -88, 4 ),
+						Position = Vector( 41, 46, 37.8 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
+					},
+					{
+						Component = "photon_fedsig_micropulse_ultra", --REAR
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -9, -85.3, 54.5 ),
+						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( 9, -85, 54.5 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 9, -85.3, 54.5 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( -3, -85, 54.5 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -3, -85.3, 54.5 ),
 						Scale = 1,
 						States = {
 							[1] = "B",
 						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( 3, -85, 54.5 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 3, -85.3, 54.5 ),
 						Scale = 1,
 						States = {
 							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
@@ -362,16 +291,16 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Soundoff nErgy 400",
+				Option = "Federal Signal Smart Siren",
 				Components = {
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
-						Model = "models/gandhi/props/100j.mdl",
-						Position = Vector( 0, 99, 30 ),
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 98, 30 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "sos_nergy400",
+						Siren = "fedsig_smartsiren",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -423,6 +352,13 @@ VEHICLE.Equipment = {
 						Position = Vector( 8, 13.8, 58.6),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/gandhi/props/vision.mdl",
+						Position = Vector( 1.5, 2, 29 ),
+						Angles = Angle( 20, 270, 0 ),
+						Scale = 0.86,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
