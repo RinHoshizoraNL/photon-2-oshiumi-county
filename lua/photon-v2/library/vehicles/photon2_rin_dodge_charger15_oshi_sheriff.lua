@@ -8,16 +8,6 @@ VEHICLE.Author		= "Rin Hoshizora"
 
 local sequence = Photon2.SequenceBuilder.New
 
-VEHICLE.Siren = {
-    [1] = {
-		T1 = "sos_nergy400/wail",
-		T2 = "sos_nergy400/yelp",
-		T3 = "sos_nergy400/piercer",
-		T4 = "sos_nergy400/alert",
-		AIR = "sos_nergy400/airhorn",
-		MAN = "sos_nergy400/wail"
-	}
-}
 
 VEHICLE.Equipment = {
 	{
@@ -41,30 +31,16 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 1, 8, 0 ),
+						Position = Vector( -12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( -1, -8, 0 ),
+						Position = Vector( 12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 				}
 			},
@@ -92,58 +68,28 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 90, 0 ),
-						Position = Vector( -12, 121.1, 40.25 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 0, 0 ),
+						Position = Vector( -12, 121.5, 40.32 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 90, 0 ),
-						Position = Vector( 12, 121.1, 40.25 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 0, 0 ),
+						Position = Vector( 12, 121.5, 40.32 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 180, 90 ),
-						Position = Vector( -19.9, 122.8, 29 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 90, 90, 0 ),
+						Position = Vector( -20.3, 122.8, 29 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 0, 90 ),
-						Position = Vector( 19.9, 122.8, 29 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 90, 270, 0 ),
+						Position = Vector( 20.3, 122.8, 29 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 				}
 			},
@@ -165,30 +111,16 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 1, 8, 0 ),
+						Position = Vector( -12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( -1, -8, 0 ),
+						Position = Vector( 12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 				}
 			},
@@ -210,75 +142,16 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 1, 8, 0 ),
+						Position = Vector( -12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 12, 115, 34.3 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( -1, -8, 0 ),
+						Position = Vector( 12, 115.6, 34.4 ),
 						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-				}
-			},
-			{
-				Option = "2022 Anniversary",
-				SubMaterials = {
-					{ Id = 4, Material = "rin/oshiumi_sheriff/charger15/anniversary" }
-				},
-				Props = {
-					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.9, 23 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 0.97,
-						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
-						},
-					},
-				},
-				Components = {
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 98, 1 ),
-						Position = Vector( -12, 115, 34.3 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-					},
-					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 82, -1 ),
-						Position = Vector( 12, 115, 34.3 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "MODE1"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 					},
 				}
 			},
@@ -303,44 +176,6 @@ VEHICLE.Equipment = {
 				},
 			},
 		},
-	},
-	{
-		Category = "Side",
-		Options = {
-			{
-				Option = "Side",
-				Components = {
-					{
-						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 180, 2, 2.5 ),
-						Position = Vector( -36, -54.5, 54.7 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "OFF"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-					{
-						Component = "photon_sos_mpf3_ocso",
-						Angles = Angle( 0, -2, -2.5 ),
-						Position = Vector( 36, -54.5, 54.7 ),
-						Scale = 1,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "OFF"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE,
-					},
-				}
-			},
-		}
 	},
 	{
 		Category = "Rear",
@@ -379,66 +214,36 @@ VEHICLE.Equipment = {
 				},
 				Components = {
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( -18, -85, 57 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -18, -85.3, 57.1 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( 18, -85, 57 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 18, -85.3, 57.1 ),
 						Scale = 1,
-						Phase = 180,
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "MODE1"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( -12, -85, 57 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -12, -85.3, 57.1 ),
 						Scale = 1,
 						States = {
 							[1] = "B",
 						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
-						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_sos_mpf4_ocso",
-						Angles = Angle( 0, 270, 0 ),
-						Position = Vector( 12, -85, 57 ),
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 12, -85.3, 57.1 ),
 						Scale = 1,
 						States = {
 							[1] = "B",
-						},
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {Light = "OFF"},
-								["MODE2"] = {Light = "TRIPLE"},
-								["MODE3"] = {Light = "TRIPLE"},
-							},
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
@@ -450,16 +255,16 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Soundoff nErgy 400",
+				Option = "Federal Signal Pathfinder",
 				Components = {
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
-						Model = "models/gandhi/props/100j.mdl",
-						Position = Vector( 0, 111, 18 ),
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 98, 30 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = 1,
+						Siren = "fedsig_pathfinder_ssp",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -583,10 +388,10 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/sosnergy.mdl",
+						Model = "models/gandhi/props/vision.mdl",
 						Position = Vector( 0, 2.1, 29 ),
 						Angles = Angle( 20, 270, 0 ),
-						Scale = 0.9,
+						Scale = 0.8,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

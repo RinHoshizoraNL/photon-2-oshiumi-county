@@ -381,16 +381,16 @@ VEHICLE.Equipment = {
 		Category = "Siren",
 		Options = {
 			{
-				Option = "Soundoff nErgy 400",
+				Option = "Federal Signal Pathfinder",
 				Components = {
 					{
 						Name = "@siren_speaker",
 						Component = "siren_prototype",
-						Model = "models/gandhi/props/100j.mdl",
-						Position = Vector( 0, 113, 32 ),
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 112, 33 ),
 						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						Siren = "sos_nergy400",
+						Siren = "fedsig_pathfinder_ssp",
 						Templates = {
 							["Sound"] = { 
 								Tone = {
@@ -565,10 +565,10 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/sentry/props/sosnergy.mdl",
+						Model = "models/gandhi/props/vision.mdl",
 						Position = Vector( 0, 11, 35 ),
 						Angles = Angle( 33, 270, 0 ),
-						Scale = 1,
+						Scale = 0.9,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{

@@ -24,31 +24,72 @@ VEHICLE.Equipment = {
 	{
 		Category = "Rear Deck",
 		Options = {
-            {
-				Option = "Whelen Slimlighters",
+			{
+				Option = "Rear Deck",
+				Props = {
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -9, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 9, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( -3, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/soundofffascia_lbracket.mdl",
+						Position = Vector( 3, -85, 54.5),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+				},
 				Components = {
 					{
-						Component = "lr_photon_whe_sl_ocso",
-						Position = Vector( 0, -75, 53 ),
-						Angles = Angle( 0, 90, 0 ),
+						Component = "photon_fedsig_micropulse_ultra", --REAR
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -9, -85.3, 54.5 ),
 						Scale = 1,
-						Bones = {
-							["suction_mounts"] = { Vector( 0, 0, 0 ), Angle( 0, 0, -45 ), 1 }
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 9, -85.3, 54.5 ),
+						Scale = 1,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( -3, -85.3, 54.5 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
 						},
-						BodyGroups = {
-							["lighthead"] = 0,
-							["wire"] = 0,
-							["mount"] = 0
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_fedsig_micropulse_ultra",
+						Angles = Angle( 0, 180, 0 ),
+						Position = Vector( 3, -85.3, 54.5 ),
+						Scale = 1,
+						States = {
+							[1] = "B",
 						},
-						States = { "R", "B" },
-						Inputs = {
-							["Emergency.Warning"] = {
-								["MODE1"] = {All = "CRUISE"},
-								["MODE2"] = {All = "ALTERNATE"},
-								["MODE3"] = {All = "RESPONSE"},
-							},
-						},
-						RenderGroup = RENDERGROUP_OPAQUE
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 				}
 			},
