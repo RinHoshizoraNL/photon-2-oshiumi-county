@@ -488,21 +488,25 @@ VEHICLE.Equipment = {
 			},
 		}
 	},
-	{
+		{
 		Category = "Lightbar",
 		Options = {
-			{
-				Option = "Soundoff Mpower",
-				Components = {
+			{ Option = "Federal Signal Vision SLR", 
+				Variants = {
 					{
-						Component = "anemolis_sos_mpower",
-						Position = Vector( 0, -15, 87 ),
-						Angles = Angle( -0.5, 270, 0 ),
-						Scale = 1.15,
+						Variant = "Default",
+						Components = {
+							{
+								Component = "photon_fedsig_visionslr_ocso",
+								Position = Vector( 0, -13, 89 ),
+								Angles = Angle( 1.5, 90, 0 ),
+								Scale = 1.08,
+							},
+						}
 					},
-				}
-			}
-		}
+				},
+			},
+		},
 	},
 	{
 		Category = "Side",

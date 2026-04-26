@@ -84,6 +84,26 @@ VEHICLE.Equipment = {
 			},
 		}
 	},
+		{
+		Category = "Lightbar",
+		Options = {
+			{ Option = "Federal Signal Vision SLR", 
+				Variants = {
+					{
+						Variant = "Default",
+						Components = {
+							{
+								Component = "photon_fedsig_visionslr_ocso",
+								Position = Vector( 0, -11, 84.3 ),
+								Angles = Angle( 1.5, 90, 0 ),
+								Scale = 1.05,
+							},
+						}
+					},
+				},
+			},
+		},
+	},
 	{
 		Category = "Grille",
 		Options = {

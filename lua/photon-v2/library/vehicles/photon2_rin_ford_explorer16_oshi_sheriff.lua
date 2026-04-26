@@ -360,21 +360,16 @@ VEHICLE.Equipment = {
 	{
 		Category = "Lightbar",
 		Options = {
-			{ Option = "SoundOff Signal nForce", 
+			{ Option = "Federal Signal Vision SLR", 
 				Variants = {
 					{
 						Variant = "Default",
 						Components = {
 							{
-								Name = "@nforce48",
-								Component = "photon_sos_nforce_48_ocso",
-								Position = Vector( 0, -12, 86.4 ),
-								Angles = Angle( 0, 0, -2 ),
-								Scale = 1.05,
-								Bones = {
-									["foot_l"] = { Vector( -2.4, 0, 0 ), Angle(), 1 },
-									["foot_r"] = { Vector( 2.4, 0, 0 ), Angle(), 1 }
-								}
+								Component = "photon_fedsig_visionslr_ocso",
+								Position = Vector( 0, -10, 88 ),
+								Angles = Angle( 1.5, 90, 0 ),
+								Scale = 1.1,
 							},
 						}
 					},

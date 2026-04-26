@@ -84,21 +84,25 @@ VEHICLE.Equipment = {
 			},
 		}
 	},
-	{
+		{
 		Category = "Lightbar",
 		Options = {
-			{
-				Option = "Soundoff Nforce",
-				Components = {
+			{ Option = "Federal Signal Vision SLR", 
+				Variants = {
 					{
-						Component = "photon_sos_nforce_54",
-						Position = Vector( 0, 6.2, 93.7 ),
-						Angles = Angle( 0, 0, -1.5 ),
-						Scale = .96,
+						Variant = "Default",
+						Components = {
+							{
+								Component = "photon_fedsig_visionslr_ocso",
+								Position = Vector( 0, 10, 95 ),
+								Angles = Angle( 1.5, 90, 0 ),
+								Scale = 1.02,
+							},
+						}
 					},
-				}
-			}
-		}
+				},
+			},
+		},
 	},
 	{
 		Category = "Pushbar",
@@ -335,12 +339,6 @@ VEHICLE.Equipment = {
 						Model = "models/schmal/antenna_gps.mdl",
 						Position = Vector( 0, -22, 92.25 ),
 						Angles = Angle( 0, 0, -0.5 ),
-						Scale = 1,
-					},
-					{
-						Model = "models/schmal/antenna_data.mdl",
-						Position = Vector( 0, 20, 91 ),
-						Angles = Angle( 0, 0, -2.5 ),
 						Scale = 1,
 					},
 					{
