@@ -19,21 +19,15 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
-					},
-					{
+						Name = "@front_plate",
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
 						Position = Vector( 0, 118.8, 18.2 ),
 						Angles = Angle( 6.5, 90, 0 ),
 						Scale = 0.97,
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
-						},
-					},
+						}
+					}
 				}
 			},
 			{
@@ -43,20 +37,17 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
+						Inherit = "@front_plate",
+						SubMaterials = {
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old_dui",
+						}
+					},
+					{
 						Model = "models/gandhi/props/nypd.mdl",
 						Position = Vector( 0, 117, 21.1),
 						Angles = Angle( 0, 270, 0 ),
 						Scale = 1,
 						Color = Color(0, 0, 0),
-					},
-					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
-						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old_dui",
-						},
 					},
 				}
 			},
@@ -67,21 +58,11 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(0, 0, 0),
-					},
-					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Inherit = "@front_plate",
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
-						},
-					},
+						}
+					}
 				}
 			},
 			{
@@ -91,120 +72,171 @@ VEHICLE.Equipment = {
 				},
 				Props = {
 					{
-						Model = "models/gandhi/props/nypd.mdl",
-						Position = Vector( 0, 117, 21.1),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Color = Color(255, 255, 255),
-					},
-					{
-						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
-						Position = Vector( 0, 118.8, 18.2 ),
-						Angles = Angle( 6.5, 90, 0 ),
-						Scale = 0.97,
+						Inherit = "@front_plate",
 						SubMaterials = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit_white",
-						},
-					},
+						}
+					}
 				}
 			},
+		}
+	},
+	{
+		Category = "Lighting",
+		Options = {
+			{
+				Option = "Default",
+				Components = {
+					{
+						Component = "photon_standard_cvpi98_4bulb",
+						Segments = {
+							["Headlight_flashers"] = {
+								Sequences = {
+									STAGE3 = sequence():Alternate(1,2,6),
+								}
+							},
+						},
+						Inputs = {
+							["Emergency.Warning"] = {
+								["MODE3"] = { 
+									Headlight_flashers = "STAGE3",
+									Taillight_flashers = "FLASH3",
+								}
+							},
+						}
+					},
+				}
+			}
 		}
 	},
 	{
 		Category = "Lightbar",
 		Options = {
             {
-				Option = "Federal Signal Vision", --I'LL GET THIS WORKING LATER
+				Option = "Whelen Advantedge",
+				Components = {
+					{
+						Component = "photon_whe_advantedge_oshi",
+						Position = Vector( 0, -19, 67.5 ),
+						Angles = Angle( -1, -90, 0 ),
+						Scale = 1,
+						BodyGroups = { 
+							["feet"] = 0,
+							["straps"] = 0,
+							["center"] = 1,
+							["rear500ta"] = 0,
+							["rear500_dr"] = 1,
+							["rear500_pas"] = 1
+						},
+						Bones = {
+							["foot_dr"] =	{ Vector( 0, 1, 0 ), Angle( 0, 0, 0 ), 1 },
+							["foot_pas"] =	{ Vector( 0, -1, 0 ), Angle( 0, 0, 0 ), 1 },
+							["strap_dr"] =	{ Vector( 0, 1.7, -0.1 ), Angle( 0, 0, 0 ), 1 },
+							["strap_pas"] =	{ Vector( 0, -1.7, -0.1 ), Angle( 0, 0, 0 ), 1 },
+
+							["500_rear_dr"] =	{ Vector( 0, -2.95, 0 ), Angle( 0, 0, 0 ), 1 },
+							["500_rear_pas"] =	{ Vector( 0, 2.95, 0 ), Angle( 0, 0, 0 ), 1 },
+						}
+					}
+                }
+			}
+		}
+	},
+	{
+		Category = "Grille Lights",
+		Options = {
+            {
+				Option = "Grille Lights",
+				Components = {
+					{
+						Component = "photon_par46_flasher_oshi",
+						Position = Vector( -8.5, 107, 27.5 ),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 0.7,
+						RenderGroup = RENDERGROUP_OPAQUE,
+						Inputs = {
+							["Vehicle.Brake"] = {
+								["BRAKE"] = {},
+							}
+						}
+					},
+					{
+						Component = "photon_par46_flasher_oshi",
+						Position = Vector( 8.5, 107, 27.5 ),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = 0.7,
+						RenderGroup = RENDERGROUP_OPAQUE,
+						Inputs = {
+							["Vehicle.Brake"] = {
+								["BRAKE"] = {},
+							}
+						}
+					},
+                },
+			},
+		}
+	},
+	{
+		Category = "Rear Deck Lights",
+		Options = {
+            {
+				Option = "Rear Deck Lights",
+				Components = {
+					{
+						Component = "photon_par46_flasher_oshi",
+						Position = Vector( -16, -77, 49 ),
+						Angles = Angle( 0, 180, 0 ),
+						Scale = 0.7,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Component = "photon_par46_flasher_oshi",
+						Position = Vector( 16, -77, 49 ),
+						Angles = Angle( 0, 180, 0 ),
+						Scale = 0.7,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+                },
 				Props = {
 					{
-						Model = "models/lilranbay/props/sgm_vision.mdl",
-						Position = Vector( 0, -17.8, 66 ),
-						Angles = Angle( 0, 180, 0.5 ),
-						Scale = 0.99,
-						SubMaterials = {
-							[1] = "rin/oshiumi_sheriff/props/vision/glass",
-							[2] = "rin/oshiumi_sheriff/props/vision/glass_outer"
-						}
-					}
-				}
-			}
-		}
-	},
-	{
-		Category = "Grille",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -8.5, 108, 26 ),
-						Angles = Angle( 0, 95, 0 ),
-						Scale = 0.9
+						Model = "models/schmal/antenna_data.mdl",
+						Position = Vector( -16, -77, 46 ),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = Vector( 0.7, 0.7, 1.5 ),
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 8.5, 108, 26 ),
-						Angles = Angle( 0, 85, 0 ),
-						Scale = 0.9
-					}
-                }
-			}
-		}
-	},
-	{
-		Category = "Rear Deck",
-		Options = {
-            {
-				Option = "Federal Signal GH1",
-				Components = {
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( -22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE
+						Model = "models/schmal/antenna_data.mdl",
+						Position = Vector( 16, -77, 46  ),
+						Angles = Angle( 0, 0, 0 ),
+						Scale = Vector( 0.7, 0.7, 1.5 ),
+						RenderGroup = RENDERGROUP_OPAQUE,
 					},
-					{
-						Component = "photon_fedsig_gh1_ocso",
-						Position = Vector( 22, -74.5, 48 ),
-						Angles = Angle( 0, 270, 0 ),
-						Scale = 1,
-						Phase = 180,
-						RenderGroup = RENDERGROUP_OPAQUE
-					}
-                }
-			}
+				},
+			},
 		}
 	},
 	{
-		Category = "Siren",
+		Category = "Spotlight",
 		Options = {
 			{
-				Option = "Federal Signal Smart Siren",
+				Option = "Pillar Spotlight Single",
 				Components = {
 					{
-						Name = "@siren_speaker",
-						Component = "siren_prototype",
-						Model = "models/gandhi/props/es100.mdl",
-						Position = Vector( 0, 107, 29.3 ),
-						Angles = Angle( 0, 90, 0 ),
+						Component = "photon_par46_left",
+						Position = Vector( -35.06, 26.46, 49.282 ),
+						Angles = Angle( 0, 0, 0 ),
 						Scale = 1,
-						Siren = "fedsig_smartsiren",
-						Templates = {
-							["Sound"] = { 
-								Tone = {
-									DSP = 0,
-									Pitch = 100
-								}
-							}
-						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						SubMaterials = {
+							[5] = "sentry/shared/env_cubemap_model"
 						}
-					},
+					}
+                },
+				BodyGroups = {
+					{ BodyGroup = "door_l_notch", Value = 0 },
+					{ BodyGroup = "door_r_notch", Value = 1 },
 				}
-			}
+			},
 		}
 	},
 	{
@@ -216,15 +248,15 @@ VEHICLE.Equipment = {
 					{ BodyGroup = "hubcaps", Value = 1 },
 				},
 			},
-			{
+            {
 				Option = "Steelies missing center caps",
 				BodyGroups = {
 					{ BodyGroup = "hubcaps", Value = 2 },
 				},
-			}
+			},
 		}
 	},
-    {
+	{
 		Category = "Rain Guards",
 		Options = {
 			{
@@ -242,73 +274,32 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Model Year",
+		Category = "Siren",
 		Options = {
 			{
-				Option = "1998",
-				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 1 },
-					{ BodyGroup = "reartrim", Value = 1 },
-					{ BodyGroup = "handles", Value = 0 },
-					{ BodyGroup = "trunkmodel", Value = 1 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 1 },
-					{ BodyGroup = "bumperr_chrome", Value = 1 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
-			},
-			{
-				Option = "1999",
-				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 3 },
-					{ BodyGroup = "reartrim", Value = 1 },
-					{ BodyGroup = "handles", Value = 0 },
-					{ BodyGroup = "trunkmodel", Value = 1 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 0 },
-					{ BodyGroup = "bumperr_chrome", Value = 0 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
-			},
-			{
-				Option = "2001",
-				BodyGroups = {
-					{ BodyGroup = "doortrim", Value = 5 },
-					{ BodyGroup = "grille", Value = 0 },
-					{ BodyGroup = "reartrim", Value = 0 },
-					{ BodyGroup = "handles", Value = 1 },
-					{ BodyGroup = "trunkmodel", Value = 0 },
-					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 0 },
-					{ BodyGroup = "bumperr_chrome", Value = 0 },
-					{ BodyGroup = "4bulb_tails", Value = 1 },
-				},
-			},
-		}
-	},
-	{
-		Category = "Spotlight",
-		Options = {
-			{
-				Option = "Pillar Spotlight",
+				Option = "Whelen Gamma",
 				Components = {
 					{
-						Component = "photon_par46_left",
-						Position = Vector( -35.06, 26.46, 49.282 ),
-						Angles = Angle( 0, 0, 0 ),
+						Component = "siren_prototype",
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 100, 29.3 ),
+						Angles = Angle( 0, 90, 0 ),
 						Scale = 1,
-						SubMaterials = {
-							[5] = "sentry/shared/env_cubemap_model"
+						Siren = "whelen_gamma",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
 						}
 					},
-				},
-				BodyGroups = {
-					{ BodyGroup = "door_l_notch", Value = 0 },
-					{ BodyGroup = "door_r_notch", Value = 1 },
 				}
-			},
+			}
 		}
 	},
 	{
@@ -317,10 +308,35 @@ VEHICLE.Equipment = {
 			{
 				Option = "Police Equipment",
 				BodyGroups = {
-					{ BodyGroup = "rearfascia", Value = 1 },
+					{ BodyGroup = "rearfascia", Value = 0 },
 					{ BodyGroup = "spotlight_l", Value = 1 },
 					{ BodyGroup = "spotlight_r", Value = 1 },
 					{ BodyGroup = "windowbars", Value = 1 },
+					{ BodyGroup = "grille", Value = 1 },
+					{ BodyGroup = "rearfascia", Value = 0 },
+					{ BodyGroup = "reartrim", Value = 1 },
+					{ BodyGroup = "handles", Value = 0 },
+					{ BodyGroup = "trunkmodel", Value = 1 },
+					{ BodyGroup = "mirrors", Value = 0 },
+					{ BodyGroup = "bumperf_chrome", Value = 1 },
+					{ BodyGroup = "bumperr_chrome", Value = 1 },
+					{ BodyGroup = "partition", Value = 0 },
+					{ BodyGroup = "doortrim", Value = 1 },
+					{ BodyGroup = "pillars", Value = 0 },
+                    { BodyGroup = "4bulb_tails", Value = 1 },
+				},
+				Components = {
+					{
+						Component = "photon_pan_toughbookcf30",
+						Position = Vector( 6.5, 13.5, 40 ),
+						Angles = Angle( 0, 31, 0 ),
+						Scale = 1,
+						Options = {
+							Pole = 2,
+							Base = -60,
+						},
+						RenderGroup = RENDERGROUP_OPAQUE,
+					}
 				},
 				Props = {
 					{
@@ -331,31 +347,51 @@ VEHICLE.Equipment = {
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/gandhi/props/vision.mdl",
-						Position = Vector( 0, 4.1, 25 ),
+						Model = "models/tdmcars/emergency/equipment/whelen_295slsa6.mdl",
+						Position = Vector( 0, 4.6, 23.7 ),
 						Angles = Angle( 20, 270, 0 ),
-						Scale = 0.8,
+						Scale = 1.2,
+						RenderGroup = RENDERGROUP_OPAQUE,
+					},
+					{
+						Model = "models/sentry/props/tactld1.mdl",
+						Position = Vector( 0, 8.2, 23.9 ),
+						Angles = Angle( 0, 0, 20 ),
+						Scale = 1,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
 						Model = "models/gandhi/props/radio.mdl",
-						Position = Vector( 0, 7.5, 25.7 ),
+						Position = Vector( 0, 12.9, 28 ),
 						Angles = Angle( 200, 270, 0 ),
 						Scale = 0.32,
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/rob/oldpolicepack/motorola.mdl",
-						Position = Vector( 0, 20, 31.2 ),
-						Angles = Angle( 20, 270, 0 ),
+						Model = "models/schmal/antenna_lojack.mdl",
+						Position = Vector( 0, -35, 67.8 ),
+						Angles = Angle( 0, 0, 2.5 ),
 						Scale = 1,
-						RenderGroup = RENDERGROUP_OPAQUE,
 					},
 					{
-						Model = "models/schmal/antenna_vhf_2.mdl",
-						Position = Vector( 0, -95, 45.3),
-						Angles = Angle( 0, 0, 0 ),
+						Model = "models/schmal/antenna_lojack.mdl",
+						Position = Vector( -5, -45, 67.3 ),
+						Angles = Angle( -2, 0, 4 ),
 						Scale = 1,
+					},
+					{
+						Model = "models/schmal/antenna_lojack.mdl",
+						Position = Vector( 5, -45, 67.3 ),
+						Angles = Angle( 2, 0, 4 ),
+						Scale = 1,
+					},
+					{
+						Name = "@trunk_antenna",
+						Model = "models/schmal/antenna_motorola.mdl",
+						Position = Vector( 29.625, 2, 0 ),
+						Angles = Angle( 180, -4.9, -90 ),
+						Scale = 1,
+						FollowBone = "trunk"
 					},
 					{
 						Model = "models/xenosprops/na_plate/na_plate_gov.mdl",
@@ -366,7 +402,7 @@ VEHICLE.Equipment = {
 							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old",
 						},
 						FollowBone = "trunk"
-					},
+					}
 				}
 			}
 		}

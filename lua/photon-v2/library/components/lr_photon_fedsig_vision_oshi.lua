@@ -11,9 +11,13 @@ COMPONENT.WorkshopRequirements = {
 	[2822295886] = "Federal Signal Vision"
 }
 
-COMPONENT.Title = [[Federal Signal Vision (OCSO)]]
+COMPONENT.Title = [[Federal Signal Vision Oshiumi County Sheriff]]
 COMPONENT.Category = "Lightbar"
 COMPONENT.Model = "models/lilranbay/props/sgm_vision.mdl"
+
+COMPONENT.SubMaterials = {
+	[1] = "rin/oshiumi_sheriff/props/fedsig_vision/colored_glass",
+}
 
 COMPONENT.Preview = {
 	Position = Vector( 0, 0, -4 ),
@@ -138,6 +142,31 @@ COMPONENT.ElementStates = {
 			IntensityTransitions = true, 
 			BloomColor = PhotonColor( 255, 110, 0 ):Blend( amber ):GetBlendColor(),
 			DrawColor = PhotonColor( 130,255,230 ):Blend( amber ):GetBlendColor()
+		},
+		["A"] = {
+			BloomColor = PhotonColor( 255, 110, 0 ):Blend( amber ):GetBlendColor(),
+			DrawColor = PhotonColor( 130,255,230 ):Blend( amber ):GetBlendColor()
+		},
+		["Proxy_RC"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 1, Value = "AngleOutput" }
+		},
+		["Proxy_RI_L"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 2, Value = "AngleOutput" }
+		},
+		["Proxy_RI_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 3, Value = "AngleOutput" }
+		},
+		["Proxy_RM_l"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 4, Value = "AngleOutput" }		
+		},
+		["Proxy_RM_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 5, Value = "AngleOutput" }
+		},
+		["Proxy_RO_L"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 6, Value = "AngleOutput" }
+		},
+		["Proxy_RO_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 7, Value = "AngleOutput" }
 		}
 	},
 	["2D"] = {
@@ -185,6 +214,63 @@ COMPONENT.ElementStates = {
 			SourceDetailColor = PhotonColor( 130,255,230):Blend(amber):GetBlendColor(), 
 			InnerGlowColor = PhotonColor(200, 110, 0):Blend(amber):Scale( aScale ):GetBlendColor(),
 			ShapeGlowColor = PhotonColor(255, 110, 0):Blend(amber):GetBlendColor()
+		},
+		["Proxy_RC"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 1, Value = "AngleOutput" }
+		},
+		["Proxy_RI_L"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 2, Value = "AngleOutput" }
+		},
+		["Proxy_RI_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 3, Value = "AngleOutput" }
+		},
+		["Proxy_RM_l"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 4, Value = "AngleOutput" }		
+		},
+		["Proxy_RM_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 5, Value = "AngleOutput" }
+		},
+		["Proxy_RO_L"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 6, Value = "AngleOutput" }
+		},
+		["Proxy_RO_R"] = {
+			Proxy = { Type = "FROM_LIGHT", Key = 7, Value = "AngleOutput" }
+		}
+	},
+	["Projected"] = {
+		["~R"] = {
+			IntensityTransitions = true,
+			Color = PhotonColor( 255, 15, 10 )
+		},
+		["~B"] = {
+			IntensityTransitions = true,
+			Color = PhotonColor( 45, 175, 255 )
+		},
+		["~SW"] = {
+			IntensityTransitions = true,
+			Color = PhotonColor( 255, 225, 200)
+		},
+		-- Keeping proxies here for now if I decide to add color inserts at somepoint
+		Proxy_RC = {
+			Proxy = { Type = "FROM_LIGHT", Key = 1, Value = "AngleOutput" }
+		},
+		Proxy_RI_L = {
+			Proxy = { Type = "FROM_LIGHT", Key = 2, Value = "AngleOutput" }
+		},
+		Proxy_RI_R = {
+			Proxy = { Type = "FROM_LIGHT", Key = 3, Value = "AngleOutput" }
+		},
+		Proxy_RM_l = {
+			Proxy = { Type = "FROM_LIGHT", Key = 4, Value = "AngleOutput" }		
+		},
+		Proxy_RM_R = {
+			Proxy = { Type = "FROM_LIGHT", Key = 5, Value = "AngleOutput" }
+		},
+		Proxy_RO_L = {
+			Proxy = { Type = "FROM_LIGHT", Key = 6, Value = "AngleOutput" }
+		},
+		Proxy_RO_R = {
+			Proxy = { Type = "FROM_LIGHT", Key = 7, Value = "AngleOutput" }
 		}
 	}
 }
@@ -261,43 +347,7 @@ COMPONENT.Templates = {
 			IntensityGainFactor = rot_igf,
 			IntensityLossFactor = rot_ilf,
 			DeactivationState = "~OFF",
-			Intensity = 0,
-			States = {
-				["~R"] = {
-					IntensityTransitions = true,
-					Color = PhotonColor( 255, 15, 10 )
-				},
-				["~B"] = {
-					IntensityTransitions = true,
-					Color = PhotonColor( 45, 175, 255 )
-				},
-				["~SW"] = {
-					IntensityTransitions = true,
-					Color = PhotonColor( 255, 225, 200)
-				},
-				-- Keeping proxies here for now if I decide to add color inserts at somepoint
-				Proxy_RC = {
-					Proxy = { Type = "FROM_LIGHT", Key = 1, Value = "AngleOutput" }
-				},
-				Proxy_RI_L = {
-					Proxy = { Type = "FROM_LIGHT", Key = 2, Value = "AngleOutput" }
-				},
-				Proxy_RI_R = {
-					Proxy = { Type = "FROM_LIGHT", Key = 3, Value = "AngleOutput" }
-				},
-				Proxy_RM_l = {
-					Proxy = { Type = "FROM_LIGHT", Key = 4, Value = "AngleOutput" }		
-				},
-				Proxy_RM_R = {
-					Proxy = { Type = "FROM_LIGHT", Key = 5, Value = "AngleOutput" }
-				},
-				Proxy_RO_L = {
-					Proxy = { Type = "FROM_LIGHT", Key = 6, Value = "AngleOutput" }
-				},
-				Proxy_RO_R = {
-					Proxy = { Type = "FROM_LIGHT", Key = 7, Value = "AngleOutput" }
-				}
-			}
+			Intensity = 0
 		}
 	}
 }
@@ -306,28 +356,26 @@ COMPONENT.States = {
 	-- Each of these correlate to a pod (except 15 lol get pranked)
 	-- Vision
 	[1] = "~SW",
-	[2] = "~SW",
-	[3] = "~SW",
+	[2] = "~B",
+	[3] = "~R",
 	[4] = "~SW",
 	[5] = "~SW",
 	[6] = "~B",
 	[7] = "~R",
 	-- Vision SL
-	[8] = "R",
-	[9] = "R",
-	[10] = "B",
-	[11] = "R",
-	[12] = "R",
-	[13] = "R",
-	[14] = "R",
-	[15] = "B",
+	[8] = "R",--CENTER
+	[9] = "W",--LEFT INNER
+	[10] = "W",--RIGHT INNER
+	[11] = "R",--LEFT MIDDLE
+	[12] = "R",--RIGHT MIDDLE
+	[13] = "R",--LEFT OUTER
+	[14] = "R",--RIGHT OUTER
+	[15] = "R", -- The three rear lights in the clear/white pods, rather em be amber than white tbh
 	-- TA
-	[16] = "A",
-	-- WHITE SIDE LIGHTS
-	[17] = "W"
+	[16] = "A"
 }
 
-COMPONENT.StateMap = "[ROT] 1 2 3 4 5 6 7 [1] 8 15 22 29 [2] 9 16 23 30 [3] 10 17 24 31 [4] 11 18 25 32 [5] 12 19 26 33 [6] 13 20 27 34 [7] 14 21 28 35 [8] 36 43 50 51 58 65 [9] 37 44 52 59 66 72 [10] 38 45 53 60 67 73 [11] 39 61 [12] 40 62 [13] 41 48 56 63 70 76 [14] 42 49 57 64 71 77 [15] 46 47 68 69 [16] 78 79 80 81 82 83 [17] 54 55 74 75"
+COMPONENT.StateMap = "[ROT] 1 2 3 4 5 6 7 [1] 8 15 22 29 [2] 9 16 23 30 [3] 10 17 24 31 [4] 11 18 25 32 [5] 12 19 26 33 [6] 13 20 27 34 [7] 14 21 28 35 [8] 36 50 51 58 [9] 37 44 52 59 66 72 [10] 38 45 53 60 67 73 [11] 39 54 61 74 [12] 40 55 62 75 [13] 41 48 56 63 70 76 [14] 42 49 57 64 71 77 [15] 43 46 47 65 68 69 [16] 78 79 80 81 82 83"
 
 local fov = 180
 
@@ -547,27 +595,24 @@ COMPONENT.Segments = {
 		}
 	},
 	Takedown = {
-		Off = "~OFF",
 		Frames = {
-			[1] = "RC RMR RML [Point0] 1 4 5"
+			[1] = "FIRB FILB"
 		},
 		Sequences = {
 			ON = { 1 }
 		}
 	},
 	AlleyLeft = {
-		Off = "~OFF",
 		Frames = {
-			[1] = "RMR [Point90] 5"
+			[1] = "IRT"
 		},
 		Sequences = {
 			ON = { 1 }
 		}
 	},
 	AlleyRight = {
-		Off = "~OFF",
 		Frames = {
-			[1] = "RML [Point270] 4"
+			[1] = "ILT"
 		},
 		Sequences = {
 			ON = { 1 }
@@ -581,14 +626,45 @@ COMPONENT.Segments = {
 			[3] = "FILB ROLB",
 
 			[4] = "FCB FIRB FILB RIRB RILB RORB ROLB IRT ILT",
-			[5] = "RCB FMRB FMLB FORB FOLB RMRB RMLB 50 51 MRT MLT ORT OLT"
+			[5] = "RCB FMRB FMLB FORB FOLB RMRB RMLB 50 51 MRT MLT ORT OLT",
+
+			[6] = "FCB RCB 50 51",
+			[7] = "FCB RCB 50 51 FIRB FILB RIRB:B RILB:B IRT ILT",
+			[8] = "FIRB FILB RIRB:B RILB:B IRT ILT FMRB FMLB RMRB RMLB MRT MLT",
+			[9] = "FMRB FMLB RMRB RMLB MRT MLT FORB FOLB RORB ROLB ORT OLT",
+			[10] = "FORB FOLB RORB ROLB ORT OLT",
+
+			[11] = "FCB RCB 50 51 FMRB FMLB RMRB RMLB MRT MLT",
+			[12] = "FIRB FILB RIRB:B RILB:B IRT ILT FORB FOLB RORB ROLB ORT OLT",
+
+			[13] = "FMRB FMLB RMRB RMLB MRT MLT",
+			[14] = "FORB FOLB RORB ROLB ORT OLT",
+
 		},
 		Sequences = {
-			DEBUG = { 3 },
+			DEBUG = { 1 },
 
 			STAGE1 = sequence():Alternate(2,3,8),
 			STAGE2 = sequence():Alternate(4,5,8),
-			STAGE3 = sequence():QuadFlash(4,5)
+			STAGE3 = sequence():QuadFlash(4,5),
+
+			LRTPD1 = { 6,6,6,6,6,6,13,13,13,13,13,13,14,14,14,14,14,14 },
+			LRTPD2 = { 6,6,13,13,14,14 },
+			LRTPD3 = sequence():Add( 10,10,9,9,8,8,7,7,6,6,0,
+		                            10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    0,6,0,6,7,0,7,0,8,0,8,9,0,9,10,0,10,0,
+								    0,6,0,6,7,0,7,0,8,0,8,9,0,9,10,0,10,0,
+								    0,6,0,6,7,0,7,0,8,0,8,9,0,9,10,0,10,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+		                            10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0,
+								    10,10,9,9,8,8,7,7,6,6,0 ):SetTiming( 1/24 ),
 		}
 	},
 	SignalMaster = {
@@ -627,9 +703,9 @@ COMPONENT.Segments = {
 			STAGE2 = sequence():Alternate(20,21,9),
 			STAGE3 = sequence():Alternate(22,23,9),
 
-			LEFT = sequence():Add( 12, 11, 10, 9, 8, 7 ):Stretch( 9 ):Add( 0 ):Hold( 9 ),
-			RIGHT = sequence():Add( 2, 3, 4, 5, 6, 7 ):Stretch( 9 ):Add( 0 ):Hold( 9 ),
-			CENOUT = sequence():Add( 13, 14, 15 ):Stretch( 9 ):Add( 0 ):Hold( 9 )
+			LEFT = sequence():Add( 12, 11, 10, 9, 8, 7 ):Stretch( 7 ):Add( 0 ):Hold( 7 ),
+			RIGHT = sequence():Add( 2, 3, 4, 5, 6, 7 ):Stretch( 7 ):Add( 0 ):Hold( 7 ),
+			CENOUT = sequence():Add( 13, 14, 15 ):Stretch( 7 ):Add( 0 ):Hold( 7 )
 		}
 	}
 }
@@ -646,20 +722,17 @@ COMPONENT.Inputs = {
 			Rotator = "STAGE1",
 			RotatorStage1 = "STAGE1",
 			RotatorLight = "STAGE1",
-			SLMain = "STAGE1",
-			SignalMaster = "STAGE1"
+			SLMain = "LRTPD1",
 		},
 		["MODE2"] = {
 			Rotator = "STAGE2",
 			RotatorLight = "STAGE2",
-			SLMain = "STAGE2",
-			SignalMaster = "STAGE2"
+			SLMain = "LRTPD2",
 		},
 		["MODE3"] = {
 			Rotator = "STAGE3",
 			RotatorLight = "STAGE3",
-			SLMain = "STAGE3",
-			SignalMaster = "STAGE3"
+			SLMain = "LRTPD3",
 		}
 	},
 	["Emergency.SceneLeft"] = {

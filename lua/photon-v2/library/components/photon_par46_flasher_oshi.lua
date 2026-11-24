@@ -10,9 +10,9 @@ COMPONENT.Credits = {
 
 COMPONENT.Phase = nil
 
-COMPONENT.Title = [[Federal Signal GH1 Oshiumi]]
+COMPONENT.Title = [[PAR46 Flasher Oshiumi County Sheriff]]
 COMPONENT.Category = "Interior"
-COMPONENT.Model = "models/lightbars/fs_gh1/fs_gh1.mdl"
+COMPONENT.Model = "models/sentry/props/spotlight_head.mdl"
 
 COMPONENT.Preview = {
 	Position = Vector(),
@@ -20,13 +20,17 @@ COMPONENT.Preview = {
 	Zoom = 2
 }
 
+COMPONENT.SubMaterials = {
+	[3] = "schmal/photon/fedsig_legend/dome_l",
+}
+
 COMPONENT.Templates = {
 	["2D"] = {
 		Light = {
-			Shape = PhotonMaterial.GenerateLightQuad("photon/lights/edge_strobe_shape.png").MaterialName,
-			Detail = PhotonMaterial.GenerateLightQuad("photon/lights/edge_strobe_detail.png").MaterialName,
-			Width = 4.7,
-			Height = 6,
+			Shape = PhotonMaterial.GenerateLightQuad("photon/lights/bulb_shape.png").MaterialName,
+			Detail = PhotonMaterial.GenerateLightQuad("photon/lights/bulb_detail.png").MaterialName,
+			Width = 7.2,
+			Height = 7.2,
 			Scale = 2,
 			IntensityGainFactor = 8,
 			IntensityLossFactor = 4,
@@ -41,7 +45,7 @@ COMPONENT.States = {
 }
 
 COMPONENT.Elements = {
-	[1] = { "Light", Vector( 1.5, 0, 3.3 ), Angle( 0, 270, 0 ) }
+	[1] = { "Light", Vector( 0, 2.2, 3.7 ), Angle( 0, 0, 0 ) },
 }
 
 COMPONENT.ElementStates = {}
@@ -62,8 +66,16 @@ COMPONENT.Segments = {
 
 			},
 			["OFF"] = { 0 },
-			["HALOGEN"] = sequence():Flash(0, 1, 1):Stretch(4),
-			["STROBE"] = sequence():TripleFlash(0, 1):Stretch(1)
+			["HALOGEN"] = sequence():Alternate(0,1,5),
+		}
+	},
+	["Brake"] = {
+		Off = "PASS",
+		Frames = {
+			[1] = "1"
+		},
+		Sequences = {
+			["ON"] = { 1 }
 		}
 	},
 }
@@ -82,28 +94,23 @@ COMPONENT.VirtualOutputs = {
 				["Emergency.Warning"] = { "MODE1", "MODE2", "MODE3" }
 			}
 		}
-		-- Mode
-		-- ["T1"] = { -- T1 is active when...
-		-- 	{ -- (Condition #1)
-		-- 		-- Siren mode is set to T1...
-		-- 		["Emergency.Siren"] = { "T1" },
-		-- 		-- AND Warning mode is MODE1, MODE2 or MODE3
-		-- 	}
-		-- }
 	}
 }
 
 COMPONENT.Inputs = {
 	["Emergency.Warning"] = {
+		["MODE2"] = {
+			Light = "HALOGEN"
+		},
 		["MODE3"] = {
-			Light = "STROBE"
+			Light = "HALOGEN"
 		}
 	},
-	["Emergency.Marker"] = {
-		["ON"] = {
-			Light = "ON"
+	["Vehicle.Brake"] = {
+		["BRAKE"] = {
+			["Brake"] = "ON",
 		}
-	}
+	},
 	-- ["Virtual.Siren"] = {
 	-- 	["T1"] = {
 	-- 		Light = "ON"
