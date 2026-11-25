@@ -1,0 +1,7 @@
+"DecalModulate"
+{
+	"$basetexture" "rin/oshiumi_sheriff/props/aerodynic/glass"
+	"$model" "1"
+	"$nocull" "1"
+}
+

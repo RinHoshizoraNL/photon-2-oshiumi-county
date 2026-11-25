@@ -1,0 +1,25 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "photon/common/white"
+	"$bumpmap" "photon/common/flat"
+   	"$nocull" "1"
+	
+	"$phong" "1"
+	"$phongexponent" "10"
+	"$phongboost" "5"	
+	"$phongfresnelranges"	"[0 0.25 1]"
+	
+	"$envmap" env_cubemap
+	"$envmaptint" "[0.01 0.01 0.01]"
+	
+	"$carfixenabled" "[.15 .15 .15]"
+	Proxies // proxies are listed inside this block
+	{
+		Equals 
+		{
+			srcVar1 $carfixenabled
+			resultVar	$color // The shader parameter to be manipulated
+
+		}
+	}
+}

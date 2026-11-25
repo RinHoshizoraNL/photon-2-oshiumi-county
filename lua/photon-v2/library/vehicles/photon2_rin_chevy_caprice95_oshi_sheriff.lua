@@ -12,13 +12,12 @@ VEHICLE.Equipment = {
 	{
 		Category = "Livery",
 		Options = {
-			
 			{
 				Option = "Patrol",
 				SubMaterials = {
 					{ Id = 22, Material = "rin/oshiumi_sheriff/caprice95/patrol" },
-					{ Id = 20, Material = "rin/lrpd2/caprice95/seats_blue" },
-					{ Id = 21, Material = "rin/lrpd2/caprice95/dash_blue" }
+					{ Id = 20, Material = "rin/oshiumi_sheriff/caprice95/seats_blue" },
+					{ Id = 21, Material = "rin/oshiumi_sheriff/caprice95/dash_blue" }
 				},
 				Props = {
 					{
@@ -33,6 +32,74 @@ VEHICLE.Equipment = {
 					}
 				}
 			},
+			{
+				Option = "Highway Patrol",
+				SubMaterials = {
+					{ Id = 22, Material = "rin/oshiumi_sheriff/caprice95/highway" },
+					{ Id = 20, Material = "rin/oshiumi_sheriff/caprice95/seats_blue" },
+					{ Id = 21, Material = "rin/oshiumi_sheriff/caprice95/dash_blue" }
+				},
+				Props = {
+					{
+						Inherit = "@front_plate",
+						SubMaterials = {
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_sheriff_old_dui",
+						}
+					},
+					{
+						Model = "models/gandhi/props/nypd.mdl",
+						Position = Vector( 0, 112.2, 15.1),
+						Angles = Angle( 0, 270, 0 ),
+						Scale = Vector( 1, 1.15, 1.2),
+						Color = Color(0, 0, 0),
+					},
+				}
+			},
+			{
+				Option = "Supervisor",
+				SubMaterials = {
+					{ Id = 22, Material = "rin/oshiumi_sheriff/caprice95/supervisor" },
+					{ Id = 20, Material = "rin/oshiumi_sheriff/caprice95/seats_blue" },
+					{ Id = 21, Material = "rin/oshiumi_sheriff/caprice95/dash_blue" }
+				},
+				Props = {
+					{
+						Inherit = "@front_plate",
+						SubMaterials = {
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit",
+						}
+					},
+				}
+			},
+			{
+				Option = "Command",
+				SubMaterials = {
+					{ Id = 22, Material = "rin/oshiumi_sheriff/caprice95/command" },
+					{ Id = 20, Material = "rin/oshiumi_sheriff/caprice95/seats_blue" },
+					{ Id = 21, Material = "rin/oshiumi_sheriff/caprice95/dash_blue" }
+				},
+				Props = {
+					{
+						Inherit = "@front_plate",
+						SubMaterials = {
+							[1] = "rin/oshiumi_sheriff/props/plates/plate_credit_white",
+						}
+					},
+				}
+			},
+		}
+	},
+	{
+		Category = "Lighting",
+		Options = {
+			{
+				Option = "Default",
+				Components = {
+					{
+						Component = "photon_standard_chevcap91_oshi",
+					}
+				}
+			}
 		}
 	},
 	{
@@ -66,22 +133,22 @@ VEHICLE.Equipment = {
 						Segments = {
 							["TA500"] = {
 								Sequences = {
-									SIGLEFT96 = sequence():Alternate(22,0,12),
-			                        SIGRIGHT96 = sequence():Alternate(23,0,12),
-			                        HAZARD96 = sequence():Alternate(24,0,12),
+									SIGLEFT95 = sequence():Alternate(22,0,10),
+			                        SIGRIGHT95 = sequence():Alternate(23,0,10),
+			                        HAZARD95 = sequence():Alternate(24,0,10),
 								}
 							},
 						},
 						Inputs = {
 							["Vehicle.Signal"] = {
 								["LEFT"] = { 
-									TA500 = "SIGLEFT96",
+									TA500 = "SIGLEFT95",
 								},
 								["RIGHT"] = { 
-									TA500 = "SIGRIGHT96",
+									TA500 = "SIGRIGHT95",
 								},
 								["HAZARD"] = { 
-									TA500 = "HAZARD96",
+									TA500 = "HAZARD95",
 								},
 							},
 						},
@@ -139,14 +206,14 @@ VEHICLE.Equipment = {
 						Segments = {
 							["Light"] = {
 								Sequences = {
-									STAGE96 = sequence():Alternate(0,1,8),
+									STAGE95 = sequence():Alternate(0,1,10),
 								}
 							},
 						},
 						Inputs = {
 							["Emergency.Warning"] = {
 								["MODE3"] = { 
-									Light = "STAGE96",
+									Light = "STAGE95",
 								}
 							},
 						},
@@ -159,7 +226,7 @@ VEHICLE.Equipment = {
 						Inputs = {
 							["Emergency.Warning"] = {
 								["MODE3"] = { 
-									Light = "STAGE96",
+									Light = "STAGE95",
 								}
 							},
 						},
@@ -307,7 +374,7 @@ VEHICLE.Equipment = {
 						Angles = Angle( 20, 270, 0 ),
 						Scale = 1,
 						SubMaterials = {
-							[0] = "rin/nypd/props/mdt/mdt",
+							[0] = "rin/oshiumi_sheriff/props/mdt/mdt",
 						},
 						RenderGroup = RENDERGROUP_OPAQUE,
 					},

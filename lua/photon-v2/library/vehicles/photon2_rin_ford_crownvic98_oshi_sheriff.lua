@@ -110,12 +110,22 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Lightbar",
+		Category = "Setup",
 		Options = {
             {
-				Option = "Whelen Advantedge",
+				Option = "1998",
+				BodyGroups = {
+					{ BodyGroup = "grille", Value = 1 },
+					{ BodyGroup = "reartrim", Value = 1 },
+					{ BodyGroup = "handles", Value = 0 },
+					{ BodyGroup = "trunkmodel", Value = 1 },
+					{ BodyGroup = "bumperf_chrome", Value = 1 },
+					{ BodyGroup = "bumperr_chrome", Value = 1 },
+					{ BodyGroup = "pillars", Value = 0 },
+                },
 				Components = {
 					{
+						Name = "@advantedge",
 						Component = "photon_whe_advantedge_oshi",
 						Position = Vector( 0, -19, 67.5 ),
 						Angles = Angle( -1, -90, 0 ),
@@ -137,9 +147,105 @@ VEHICLE.Equipment = {
 							["500_rear_dr"] =	{ Vector( 0, -2.95, 0 ), Angle( 0, 0, 0 ), 1 },
 							["500_rear_pas"] =	{ Vector( 0, 2.95, 0 ), Angle( 0, 0, 0 ), 1 },
 						}
-					}
+					},
+					{
+						Component = "siren_prototype",
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 100, 29.3 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 1,
+						Siren = "whelen_gamma",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						}
+					},
                 }
-			}
+			},
+			{
+				Option = "1999",
+				BodyGroups = {
+					{ BodyGroup = "grille", Value = 3 },
+					{ BodyGroup = "reartrim", Value = 1 },
+					{ BodyGroup = "handles", Value = 0 },
+					{ BodyGroup = "trunkmodel", Value = 1 },
+					{ BodyGroup = "bumperf_chrome", Value = 0 },
+					{ BodyGroup = "bumperr_chrome", Value = 0 },
+					{ BodyGroup = "pillars", Value = 0 },
+                },
+				Components = {
+					{
+						Inherit = "@advantedge",
+						Position = Vector( 0, -19, 67.5 ),
+						Angles = Angle( -1, -90, 0 ),
+					},
+					{
+						Component = "siren_prototype",
+						Model = "models/gandhi/props/es100.mdl",
+						Position = Vector( 0, 100, 29.3 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 1,
+						Siren = "whelen_gamma",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						}
+					},
+                }
+			},
+			{
+				Option = "2001",
+				BodyGroups = {
+					{ BodyGroup = "grille", Value = 0 },
+					{ BodyGroup = "reartrim", Value = 0 },
+					{ BodyGroup = "handles", Value = 1 },
+					{ BodyGroup = "trunkmodel", Value = 0 },
+					{ BodyGroup = "bumperf_chrome", Value = 0 },
+					{ BodyGroup = "bumperr_chrome", Value = 0 },
+					{ BodyGroup = "pillars", Value = 1 },
+                },
+				Components = {
+					{
+						Component = "photon_c3_mx7000_oshi",
+						Position = Vector( 0, -19, 66.9 ),
+						Angles = Angle( 0, 180, 1 ),
+						Scale = 1.005,
+					},
+					{
+						Component = "siren_prototype",
+						Model = "models/gandhi/props/c3100.mdl",
+						Position = Vector( 13.5, 107, 29.3 ),
+						Angles = Angle( 0, 90, 0 ),
+						Scale = 0.7,
+						Siren = "code3_z3",
+						Templates = {
+							["Sound"] = { 
+								Tone = {
+									DSP = 0,
+									Pitch = 100
+								}
+							}
+						},
+						Inputs = { 
+							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
+						}
+					},
+                }
+			},
 		}
 	},
 	{
@@ -274,35 +380,6 @@ VEHICLE.Equipment = {
 		}
 	},
 	{
-		Category = "Siren",
-		Options = {
-			{
-				Option = "Whelen Gamma",
-				Components = {
-					{
-						Component = "siren_prototype",
-						Model = "models/gandhi/props/es100.mdl",
-						Position = Vector( 0, 100, 29.3 ),
-						Angles = Angle( 0, 90, 0 ),
-						Scale = 1,
-						Siren = "whelen_gamma",
-						Templates = {
-							["Sound"] = { 
-								Tone = {
-									DSP = 0,
-									Pitch = 100
-								}
-							}
-						},
-						Inputs = { 
-							["Emergency.SirenParkKill"] = { ["PARK"] = {} }
-						}
-					},
-				}
-			}
-		}
-	},
-	{
 		Category = "Police Equipment",
 		Options = {
 			{
@@ -312,18 +389,10 @@ VEHICLE.Equipment = {
 					{ BodyGroup = "spotlight_l", Value = 1 },
 					{ BodyGroup = "spotlight_r", Value = 1 },
 					{ BodyGroup = "windowbars", Value = 1 },
-					{ BodyGroup = "grille", Value = 1 },
-					{ BodyGroup = "rearfascia", Value = 0 },
-					{ BodyGroup = "reartrim", Value = 1 },
-					{ BodyGroup = "handles", Value = 0 },
-					{ BodyGroup = "trunkmodel", Value = 1 },
 					{ BodyGroup = "mirrors", Value = 0 },
-					{ BodyGroup = "bumperf_chrome", Value = 1 },
-					{ BodyGroup = "bumperr_chrome", Value = 1 },
 					{ BodyGroup = "partition", Value = 0 },
 					{ BodyGroup = "doortrim", Value = 1 },
-					{ BodyGroup = "pillars", Value = 0 },
-                    { BodyGroup = "4bulb_tails", Value = 1 },
+					{ BodyGroup = "4bulb_tails", Value = 1 },
 				},
 				Components = {
 					{
