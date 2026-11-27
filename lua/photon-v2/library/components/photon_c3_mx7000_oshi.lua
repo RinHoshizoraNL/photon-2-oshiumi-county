@@ -1,7 +1,7 @@
 if (Photon2.ReloadComponentFile()) then return end
 local COMPONENT = Photon2.LibraryComponent()
 
-COMPONENT.Author = "Photon"
+COMPONENT.Author = "Rin Hoshizora"
 COMPONENT.Credits = {
 	Model = "SGM",
 	Code = "Schmal"

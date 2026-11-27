@@ -1,7 +1,7 @@
 if (Photon2.ReloadComponentFile()) then return end
 local COMPONENT = Photon2.LibraryComponent()
 
-COMPONENT.Author = "Photon"
+COMPONENT.Author = "Rin Hoshizora"
 COMPONENT.Credits = {
 	Model = "SGM & LilRanbay",
 	Code = "LilRanbay"
@@ -694,18 +694,26 @@ COMPONENT.Segments = {
 			[20] = "78 80",
 			[21] = "81 79",
 			[22] = "78 80 81 79",
-			[23] = "82 83"
+			[23] = "82 83",
+
+			[24] = "78",
+			[25] = "79",
+			[26] = "78 79",
 		},
 		Sequences = {
 			DEBUG = { 1 },
 
 			STAGE1 = sequence():Alternate(18,19,9),
 			STAGE2 = sequence():Alternate(20,21,9),
-			STAGE3 = sequence():Alternate(22,23,9),
+			STAGE3 = sequence():Alternate(22,23,7),
 
-			LEFT = sequence():Add( 12, 11, 10, 9, 8, 7 ):Stretch( 7 ):Add( 0 ):Hold( 7 ),
-			RIGHT = sequence():Add( 2, 3, 4, 5, 6, 7 ):Stretch( 7 ):Add( 0 ):Hold( 7 ),
-			CENOUT = sequence():Add( 13, 14, 15 ):Stretch( 7 ):Add( 0 ):Hold( 7 )
+			LEFT = sequence():Add( 12, 11, 10, 9, 8, 7 ):Stretch( 5 ):Add( 0 ):Hold( 5 ),
+			RIGHT = sequence():Add( 2, 3, 4, 5, 6, 7 ):Stretch( 5 ):Add( 0 ):Hold( 5 ),
+			CENOUT = sequence():Add( 13, 14, 15 ):Stretch( 7 ):Add( 0 ):Hold( 6 ),
+
+			SIGLEFT = sequence():Alternate(24,0,8),
+			SIGRIGHT = sequence():Alternate(25,0,8),
+			HAZARD = sequence():Alternate(26,0,8),
 		}
 	}
 }
@@ -733,6 +741,7 @@ COMPONENT.Inputs = {
 			Rotator = "STAGE3",
 			RotatorLight = "STAGE3",
 			SLMain = "LRTPD3",
+			SignalMaster = "STAGE3",
 		}
 	},
 	["Emergency.SceneLeft"] = {
@@ -749,5 +758,16 @@ COMPONENT.Inputs = {
 		["LEFT"] = { SignalMaster = "LEFT" },
 		["RIGHT"] = { SignalMaster = "RIGHT" },
 		["CENOUT"] = { SignalMaster = "CENOUT" }
-	}
+	},
+	["Vehicle.Signal"] = {
+		["LEFT"] = {
+			SignalMaster = "SIGLEFT",
+		},
+		["RIGHT"] = {
+			SignalMaster = "SIGRIGHT",
+		},
+		["HAZARD"] = {
+			SignalMaster = "HAZARD",
+		}
+	},
 }

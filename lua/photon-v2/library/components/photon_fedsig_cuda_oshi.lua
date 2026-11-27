@@ -2,7 +2,7 @@ if (Photon2.ReloadComponentFile()) then return end
 local COMPONENT = Photon2.LibraryComponent()
 local sequence = Photon2.SequenceBuilder.New
 
-COMPONENT.Author = "anemolis72"
+COMPONENT.Author = "Rin Hoshizora"
 
 COMPONENT.Credits = {
 	Model = "GTA5",
